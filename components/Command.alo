@@ -1,0 +1,59 @@
+<template>
+    <div class="cmd">
+        <code><i>$ </i><span class="cmd-text">{{ props.command }}</span></code>
+        <button class="copy" type="button" data-copy="{{ props.command }}" aria-label="{{ props.label }}">Copy</button>
+    </div>
+</template>
+
+<style>
+    .cmd{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--navy);border-radius:12px;padding:6px 6px 6px 16px;margin-top:auto}
+    .cmd code{font:400 14px var(--mono);color:#FFD58A;overflow-x:auto;white-space:nowrap;padding:8px 0}
+    .cmd code i{font-style:normal;color:#6F7F9C}
+    .copy{flex:none;font:600 13px var(--sans);background:rgba(255,255,255,.1);color:#fff;border:0;padding:10px 14px;border-radius:9px;cursor:pointer;transition:background .15s}
+    .copy:hover{background:rgba(255,255,255,.18)}
+    .copy.ok{background:var(--mint);color:var(--navy)}
+
+    @media (max-width:640px){
+        .cmd code{white-space:normal;word-break:break-all;line-height:1.5;padding:10px 0}
+    }
+</style>
+
+<script>
+    const button = $el.querySelector('.copy');
+
+    function fallbackCopy(text) {
+        const area = document.createElement('textarea');
+        area.value = text;
+        area.setAttribute('readonly', '');
+        area.style.position = 'fixed';
+        area.style.opacity = '0';
+        document.body.appendChild(area);
+        area.select();
+        try {
+            document.execCommand('copy');
+        } catch (e) {}
+        document.body.removeChild(area);
+    }
+
+    function showCopied() {
+        button.textContent = 'Copied';
+        button.classList.add('ok');
+        setTimeout(() => {
+            button.textContent = 'Copy';
+            button.classList.remove('ok');
+        }, 1600);
+    }
+
+    button.addEventListener('click', () => {
+        const text = button.getAttribute('data-copy');
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(showCopied, () => {
+                fallbackCopy(text);
+                showCopied();
+            });
+        } else {
+            fallbackCopy(text);
+            showCopied();
+        }
+    });
+</script>
