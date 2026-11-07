@@ -8,7 +8,10 @@
                 <a href="{{ data.site.links.npm }}" target="_blank" rel="noopener">npm</a>
                 <a href="{{ data.site.links.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
             </div>
-            <p class="legal">© 2023–<span id="yr">{{ new Date().getFullYear() }}</span> msilabs. Start typing. Keep learning.<br>The bKash packages are community projects, not affiliated with or endorsed by bKash. bKash is a trademark of its respective owner.<br>This site is built with <a href="https://github.com/msilabs/alo" target="_blank" rel="noopener">Alo</a>.</p>
+            <div class="legal">
+                <p class="copy-text">© 2023–<span id="yr">{{ new Date().getFullYear() }}</span> msilabs. Start typing. Keep learning.<br>The bKash packages are community projects, not affiliated with or endorsed by bKash. bKash is a trademark of its respective owner.</p>
+                <p class="about-alo">This site is built with <a href="https://github.com/msilabs/alo" target="_blank" rel="noopener">Alo</a>, made by msilabs.<br>Alo is a lightweight static web framework: plain HTML, CSS and JS with components & layouts, zero dependencies, fully static output.</p>
+            </div>
         </div>
     </footer>
 </template>
@@ -19,9 +22,15 @@
     .fl{display:flex;gap:22px;flex-wrap:wrap}
     .fl a{text-decoration:none;color:#C8D2E6}
     .fl a:hover{color:#fff}
-    .legal{width:100%;border-top:1px solid rgba(255,255,255,.08);padding-top:22px;margin-top:6px;line-height:1.7}
-    .legal a{color:#C8D2E6}
-    .legal a:hover{color:#fff}
+    .legal{width:100%;display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:20px 48px;border-top:1px solid rgba(255,255,255,.08);padding-top:22px;margin-top:6px;line-height:1.7}
+    .about-alo{text-align:right}
+    .about-alo a{color:#fbbf3c;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+    .about-alo a:hover{color:#fcd27a}
+
+    @media (max-width:760px){
+        .legal{grid-template-columns:1fr}
+        .about-alo{text-align:left}
+    }
 </style>
 
 <style global>
