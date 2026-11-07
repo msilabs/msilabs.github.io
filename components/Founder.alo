@@ -16,12 +16,10 @@
                 </div>
                 <div class="box rv">
                     <h3>Say hello</h3>
-                    <p>Found a bug, want a feature, or just want to talk code? The best place is a GitHub issue; email and LinkedIn work too.</p>
+                    <p>Found a bug, want a feature, or just want to talk code? The best place is a GitHub issue; LinkedIn works too.</p>
                     <ul class="contact-list">
                         <li><a href="{{ data.site.links.github }}" target="_blank" rel="noopener">GitHub <span>github.com/msilabs</span></a></li>
-                        <li><a href="{{ data.site.links.linkedin }}" target="_blank" rel="noopener">LinkedIn <span>linkedin.com/company/msilabs</span></a></li>
-                        <li><a href="mailto:{{ data.site.links.email }}">Email <span>{{ data.site.links.email }}</span></a></li>
-                    </ul>
+                        <li><a href="{{ data.site.links.linkedin }}" target="_blank" rel="noopener">LinkedIn <span>linkedin.com/company/msilabs</span></a></li>                    </ul>
                 </div>
             </div>
         </div>
