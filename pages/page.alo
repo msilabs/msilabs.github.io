@@ -18,6 +18,7 @@
     <Hero />
     <About />
     <Packages />
+    <Framework />
     <Learn />
     <Story />
     <Founder />

@@ -1,0 +1,55 @@
+<template>
+    <section id="framework" aria-labelledby="alo-title">
+        <div class="wrap framework">
+            <div class="rv">
+                <div class="kicker">Framework</div>
+                <h2 id="alo-title">Alo, a small static site framework.</h2>
+                <p class="sub">Write plain HTML, CSS and JS in <code>.alo</code> files and get components, layouts, loops and conditions at build time. The result is a fully static site, with no config file, no imports and no runtime in the browser.</p>
+                <div class="chips">
+                    <span class="chip hl">Zero dependencies</span>
+                    <span class="chip">Node.js 22+</span>
+                    <span class="chip">Static output</span>
+                </div>
+                <Command command="npx @msilabs/alo init my-site" label="Copy npx command" />
+                <div class="flinks">
+                    <a href="https://github.com/msilabs/alo" target="_blank" rel="noopener">GitHub</a>
+                </div>
+            </div>
+
+            <div class="term rv" aria-hidden="true">
+                <div class="term-bar"><i></i><i></i><i></i><span>my-site</span></div>
+                <div class="term-body">
+                    <span class="c"># folders are routes, files are components</span><br>
+                    pages/page.alo <span class="c">→ /</span><br>
+                    pages/about/page.alo <span class="c">→ /about/</span><br>
+                    components/Card.alo <span class="c">→</span> <span class="s">&lt;Card /&gt;</span><br>
+                    data/team.json <span class="c">→ data.team</span><br>
+                    <span class="p">$</span> node alo build
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+
+<style>
+    .framework{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+    .framework code{font-family:var(--mono);font-size:.92em}
+    .framework .chips{margin-top:24px}
+    .flinks{display:flex;gap:18px;margin-top:20px;font-size:15px;font-weight:600}
+    .flinks a{color:var(--teal);text-decoration:none;border-bottom:2px solid transparent}
+    .flinks a:hover{border-color:var(--teal)}
+
+    .term{background:var(--navy-deep);border:1px solid rgba(255,255,255,.1);border-radius:16px;box-shadow:0 30px 60px -20px rgba(20,33,61,.45);overflow:hidden}
+    .term-bar{display:flex;align-items:center;gap:7px;padding:13px 16px;border-bottom:1px solid rgba(255,255,255,.07)}
+    .term-bar i{width:11px;height:11px;border-radius:50%;background:#2B3E60;display:block}
+    .term-bar i:first-child{background:var(--sun)}
+    .term-bar span{margin-left:10px;font:400 13px var(--mono);color:#7F8DAA}
+    .term-body{padding:22px 22px 26px;font:400 14.5px/2 var(--mono);color:#C8D2E6;overflow-x:auto;white-space:nowrap}
+    .term-body .c{color:#6F7F9C}
+    .term-body .p{color:var(--mint)}
+    .term-body .s{color:#FFD58A}
+
+    @media (max-width:960px){
+        .framework{grid-template-columns:1fr;gap:44px}
+    }
+</style>
