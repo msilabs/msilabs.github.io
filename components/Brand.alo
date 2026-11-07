@@ -1,0 +1,12 @@
+<template>
+    <a class="brand" href="#top" aria-label="{{ props.label }}">
+        <img
+            src="/logo.png"
+            width="{{ props.size ?? 36 }}"
+            height="{{ props.size ?? 36 }}"
+            alt=""
+            style="{{ props.size ? 'width:' + props.size + 'px;height:' + props.size + 'px;border-radius:8px' : null }}"
+        >
+        <span class="wm">msi<b>labs</b></span>
+    </a>
+</template>

@@ -1,23 +1,61 @@
-<!-- এই লেআউট সব পেইজকে মোড়ায়: পেইজের কনটেন্ট বসে <slot />-এর জায়গায় -->
 <head>
-    <meta name="description" content="{{ data.site.description }}">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#14213D">
+    <meta name="author" content="Md Saiful Islam">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="apple-touch-icon" href="/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "msilabs",
+      "slogan": "Start typing. Keep learning.",
+      "foundingDate": "2023",
+      "founder": { "@type": "Person", "name": "Md Saiful Islam" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Dhaka", "addressCountry": "BD" },
+      "sameAs": [
+        "https://github.com/msilabs",
+        "https://www.linkedin.com/company/msilabs",
+        "https://packagist.org/packages/msilabs/bkash",
+        "https://www.npmjs.com/package/@msilabs/bkash"
+      ]
+    }
+    </script>
 </head>
 
 <template>
+    <a class="skip" href="#main">Skip to content</a>
     <Header />
-    <main class="container">
+    <main id="main">
+        <div id="top"></div>
         <slot />
     </main>
     <Footer />
 </template>
 
-<style>
-    main {
-        min-height: 60vh;
-        padding-top: 3.5rem;
+<script>
+    const root = document.documentElement;
+    const items = document.querySelectorAll('.rv');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if ('IntersectionObserver' in window && !reduceMotion) {
+        root.classList.add('js');
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+        );
+        items.forEach((el, i) => {
+            el.style.transitionDelay = (i % 3) * 70 + 'ms';
+            observer.observe(el);
+        });
     }
-</style>
+</script>

@@ -1,0 +1,28 @@
+<template>
+    <section id="packages" class="tint" aria-labelledby="pkg-title">
+        <div class="wrap">
+            <div class="head rv">
+                <div class="kicker">Packages</div>
+                <h2 id="pkg-title">bKash payments, for the stack you use.</h2>
+                <p class="sub">Two packages for bKash Tokenized Checkout v2: one for Laravel, one for JavaScript runtimes. Same ideas, each idiomatic to its ecosystem.</p>
+            </div>
+
+            <div class="pkgs">
+                <template for="pkg in data.packages">
+                    <PackageCard pkg="{{ pkg }}" />
+                </template>
+            </div>
+
+            <p class="note rv">Community packages, not affiliated with or endorsed by bKash. Free and open source under the MIT license.</p>
+        </div>
+    </section>
+</template>
+
+<style>
+    .pkgs{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .note{margin-top:28px;font-size:14.5px;color:var(--slate);text-align:center}
+
+    @media (max-width:960px){
+        .pkgs{grid-template-columns:1fr}
+    }
+</style>

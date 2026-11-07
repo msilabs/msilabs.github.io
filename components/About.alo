@@ -1,0 +1,41 @@
+<template>
+    <section id="about" aria-labelledby="what-title">
+        <div class="wrap">
+            <div class="head rv">
+                <div class="kicker">What msilabs does</div>
+                <h2 id="what-title">Useful code, shared freely.</h2>
+                <p class="sub">Two things, done in my own time: packages that save developers an integration headache, and lessons that help newcomers get started.</p>
+            </div>
+            <div class="tiles">
+                <article class="tile rv">
+                    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg></div>
+                    <h3>Open-source packages</h3>
+                    <p>Packages for Laravel (PHP) and JavaScript, published on Packagist and npm.</p>
+                </article>
+                <article class="tile rv">
+                    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4H9a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H3.5A1.5 1.5 0 0 1 2 16V5.5ZM22 5.5A1.5 1.5 0 0 0 20.5 4H15a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5h6a1.5 1.5 0 0 0 1.5-1.5V5.5Z"/></svg></div>
+                    <h3>Beginner-friendly lessons</h3>
+                    <p>A Laravel series with animated explainers, made for people writing their first lines of backend code.</p>
+                </article>
+                <article class="tile rv">
+                    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10Z"/></svg></div>
+                    <h3>Free, and honest</h3>
+                    <p>Everything is free and MIT-licensed. The packages are community-made and not affiliated with bKash.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+</template>
+
+<style>
+    .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .tile{padding:30px 28px;border:1px solid var(--line);border-radius:18px;background:#fff}
+    .tile .ic{width:46px;height:46px;border-radius:12px;background:rgba(30,214,168,.14);color:var(--teal);display:grid;place-items:center;margin-bottom:20px}
+    .tile .ic svg{width:24px;height:24px}
+    .tile h3{font-size:19px;letter-spacing:-.01em;margin-bottom:8px}
+    .tile p{color:var(--slate);font-size:16px}
+
+    @media (max-width:960px){
+        .tiles{grid-template-columns:1fr}
+    }
+</style>

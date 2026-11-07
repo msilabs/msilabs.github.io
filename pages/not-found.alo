@@ -1,26 +1,18 @@
 <head>
-    <title>পেইজটি পাওয়া যায়নি | {{ data.site.name }}</title>
+    <title>Page not found | {{ data.site.name }}</title>
 </head>
 
 <template>
-    <div class="missing">
-        <p class="code">৪০৪</p>
-        <h1>এই পেইজটি পাওয়া যায়নি</h1>
-        <a class="button button-primary" href="/">হোমে ফিরে যান</a>
-    </div>
+    <section class="dark">
+        <div class="wrap">
+            <div class="kicker">404</div>
+            <h2>Page not found.</h2>
+            <p class="sub">The page you are looking for does not exist.</p>
+            <a class="btn btn-mint" href="/">Back to home</a>
+        </div>
+    </section>
 </template>
 
 <style>
-    .missing {
-        display: grid;
-        justify-items: start;
-        gap: 1rem;
-    }
-
-    .code {
-        color: var(--accent);
-        font-size: 4rem;
-        font-weight: 700;
-        line-height: 1;
-    }
+    .btn{margin-top:30px}
 </style>

@@ -1,0 +1,28 @@
+[
+    {
+        "datetime": "2023-11",
+        "label": "Nov 2023",
+        "title": "msilabs begins",
+        "text": "The GitHub organization is created and the experiments start."
+    },
+    {
+        "datetime": "2024-07",
+        "label": "Jul 2024",
+        "title": "First public package",
+        "code": "msilabs/bkash",
+        "text": "is released for Laravel."
+    },
+    {
+        "datetime": "2026-10",
+        "label": "Oct 2026",
+        "title": "JavaScript arrives",
+        "code": "@msilabs/bkash",
+        "text": "brings the same integration to Node.js, Bun, Deno and the edge."
+    },
+    {
+        "now": true,
+        "label": "Now",
+        "title": "Teaching what I build",
+        "text": "The Laravel for Beginners series is in progress."
+    }
+]

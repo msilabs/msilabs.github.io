@@ -1,0 +1,49 @@
+[
+    {
+        "accent": "laravel",
+        "tag": "Laravel · PHP · Composer",
+        "name": "msilabs/bkash",
+        "description": "bKash Tokenized Checkout v2 for Laravel. Create, execute, query and search payments, with full and partial refunds and agreement (one-click) payments.",
+        "features": [
+            "Multiple merchants, from config or the database at runtime",
+            "Automatic token caching and refresh",
+            "Bangla error messages, API logging with secrets masked",
+            "Built-in sandbox validation routes"
+        ],
+        "chips": [
+            { "text": "2.8K+ installs on Packagist", "highlight": true },
+            { "text": "PHP 8.2–8.5" },
+            { "text": "Laravel 9–13" },
+            { "text": "Facade API" }
+        ],
+        "command": "composer require msilabs/bkash",
+        "copyLabel": "Copy composer command",
+        "links": [
+            { "label": "GitHub", "href": "https://github.com/msilabs/bkash" },
+            { "label": "Packagist", "href": "https://packagist.org/packages/msilabs/bkash" }
+        ]
+    },
+    {
+        "accent": "node",
+        "tag": "Node.js · TypeScript · npm",
+        "name": "@msilabs/bkash",
+        "description": "A server-side bKash Tokenized Checkout v2 client for Node.js, Bun, Deno and edge runtimes. Create, execute, query and search payments, with refunds and agreement (one-click) payments.",
+        "features": [
+            "confirmPayment() checks the real status when execute fails or times out",
+            "Token caching with a pluggable store (Redis, KV) for serverless and edge",
+            "Bangla error messages, API logging with secrets masked",
+            "Works with Express, NestJS, Next.js, Hono and more"
+        ],
+        "chips": [
+            { "text": "Zero dependencies", "highlight": true },
+            { "text": "TypeScript types" },
+            { "text": "ESM & CommonJS" }
+        ],
+        "command": "npm install @msilabs/bkash",
+        "copyLabel": "Copy npm command",
+        "links": [
+            { "label": "GitHub", "href": "https://github.com/msilabs/bkash-js" },
+            { "label": "npm", "href": "https://www.npmjs.com/package/@msilabs/bkash" }
+        ]
+    }
+]

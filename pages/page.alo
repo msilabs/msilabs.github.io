@@ -1,8 +1,17 @@
 <head>
-    <title>{{ data.site.name }}</title>
+    <title>{{ data.site.title }}</title>
+    <meta name="description" content="{{ data.site.description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ data.site.title }}">
+    <meta property="og:description" content="Free, open-source developer tools and beginner-friendly lessons, built by one developer in Bangladesh.">
+    <meta name="twitter:card" content="summary">
 </head>
 
 <template>
-    <h1>{{ data.site.name }}</h1>
-    <p>{{ data.site.description }}</p>
+    <Hero />
+    <About />
+    <Packages />
+    <Learn />
+    <Story />
+    <Founder />
 </template>

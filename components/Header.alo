@@ -1,58 +1,31 @@
 <template>
-    <header class="site-header">
-        <div class="bar container">
-            <a class="logo" href="/">{{ data.site.name }}</a>
-            <nav aria-label="প্রধান মেনু">
-                <template for="link in data.menu">
-                    <a href="{{ link.href }}" aria-current="{{ route.path === link.href ? 'page' : null }}">{{ link.label }}</a>
+    <header class="nav">
+        <div class="wrap">
+            <Brand label="msilabs home" />
+            <nav class="links" aria-label="Main">
+                <template for="link in data.site.nav">
+                    <a href="{{ link.href }}">{{ link.label }}</a>
                 </template>
+                <a class="btn btn-mint" href="{{ data.site.links.github }}" target="_blank" rel="noopener">
+                    <Icons.GitHub />
+                    GitHub
+                </a>
             </nav>
         </div>
     </header>
 </template>
 
 <style>
-    .site-header {
-        border-bottom: 1px solid var(--border);
-        background: var(--surface);
-    }
+    .nav{position:sticky;top:0;z-index:50;background:rgba(20,33,61,.97);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid rgba(255,255,255,.07)}
+    .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+    .links{display:flex;align-items:center;gap:28px}
+    .links a{color:#C8D2E6;text-decoration:none;font-size:15px;font-weight:500;transition:color .15s}
+    .links a:hover{color:#fff}
+    .links a.btn-mint{color:var(--navy)}
+    .links a.btn-mint:hover{color:var(--navy)}
+    .nav .btn{padding:10px 16px;font-size:14px}
 
-    .bar {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 0.75rem;
-        min-height: 4rem;
-    }
-
-    .logo {
-        color: var(--text);
-        font-size: 1.25rem;
-        font-weight: 700;
-        text-decoration: none;
-    }
-
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.25rem;
-    }
-
-    nav a {
-        padding: 0.35rem 0.8rem;
-        border-radius: 999px;
-        color: var(--muted);
-        font-weight: 500;
-        text-decoration: none;
-    }
-
-    nav a:hover {
-        color: var(--text);
-    }
-
-    nav a[aria-current='page'] {
-        background: var(--accent-soft);
-        color: var(--accent-strong);
+    @media (max-width:640px){
+        .links a:not(.btn){display:none}
     }
 </style>

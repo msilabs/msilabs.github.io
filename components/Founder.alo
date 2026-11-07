@@ -1,0 +1,53 @@
+<template>
+    <section class="tint" aria-labelledby="who-title">
+        <div class="wrap">
+            <div class="head rv">
+                <div class="kicker">Behind msilabs</div>
+                <h2 id="who-title">One developer, building in the open.</h2>
+            </div>
+            <div class="founder">
+                <div class="box rv">
+                    <div class="avatar">
+                        <div class="ini" aria-hidden="true">MS</div>
+                        <div><b>Md Saiful Islam</b><span>Founder, msilabs · Dhaka, Bangladesh</span></div>
+                    </div>
+                    <p>msilabs is my personal open-source brand. I build the packages and write the lessons in my own time, and welcome issues and pull requests on GitHub.</p>
+                    <a class="btn btn-line" href="{{ data.site.links.portfolio }}" target="_blank" rel="noopener">Visit my portfolio</a>
+                </div>
+                <div class="box rv">
+                    <h3>Say hello</h3>
+                    <p>Found a bug, want a feature, or just want to talk code? The best place is a GitHub issue; email and LinkedIn work too.</p>
+                    <ul class="contact-list">
+                        <li><a href="{{ data.site.links.github }}" target="_blank" rel="noopener">GitHub <span>github.com/msilabs</span></a></li>
+                        <li><a href="{{ data.site.links.linkedin }}" target="_blank" rel="noopener">LinkedIn <span>linkedin.com/company/msilabs</span></a></li>
+                        <li><a href="mailto:{{ data.site.links.email }}">Email <span>{{ data.site.links.email }}</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+
+<style>
+    .founder{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .box{background:#fff;border:1px solid var(--line);border-radius:20px;padding:34px}
+    .box h3{font-size:22px;letter-spacing:-.02em;margin-bottom:10px}
+    .box p{color:var(--slate);font-size:16.5px}
+    .box .btn{margin-top:22px}
+    .avatar{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+    .avatar .ini{width:52px;height:52px;border-radius:14px;background:var(--navy);color:var(--mint);display:grid;place-items:center;font:700 18px var(--mono)}
+    .avatar b{display:block;font-size:18px}
+    .avatar span{font-size:14.5px;color:var(--slate)}
+    .contact-list{list-style:none;display:grid;gap:4px;margin-top:6px}
+    .contact-list a{display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;padding:13px 0;border-bottom:1px solid var(--line);font-weight:600;font-size:16px}
+    .contact-list li:last-child a{border-bottom:0}
+    .contact-list a span{font-weight:400;color:var(--slate);font-size:14.5px;overflow-wrap:anywhere;text-align:right}
+    .contact-list a:hover{color:var(--teal)}
+
+    @media (max-width:960px){
+        .founder{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+        .box{padding:26px 22px}
+    }
+</style>
