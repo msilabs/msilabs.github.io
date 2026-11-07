@@ -12,14 +12,22 @@
                 <p class="fine">Free &amp; open source (MIT) · Community packages, not affiliated with bKash</p>
             </div>
 
-            <div class="term" aria-hidden="true">
-                <div class="term-bar"><i></i><i></i><i></i><span>~/msilabs</span></div>
-                <div class="term-body">
-                    <span class="c"># Laravel</span><br>
-                    <span class="p">$</span> composer require <span class="s">msilabs/bkash</span><br>
-                    <span class="c"># Node.js, Bun, Deno</span><br>
-                    <span class="p">$</span> npm install <span class="s">@msilabs/bkash</span><br>
-                    <span class="p">$</span> <span class="cursor"></span>
+            <div class="terms" aria-hidden="true">
+                <div class="term laravel">
+                    <div class="term-bar"><i></i><i></i><i></i><span>composer</span></div>
+                    <div class="term-body">
+                        <span class="c"># Laravel</span><br>
+                        <span class="p">$</span> composer require <span class="s">msilabs/bkash</span><br>
+                        <span class="p">$</span> <span class=""></span>
+                    </div>
+                </div>
+                <div class="term node">
+                    <div class="term-bar"><i></i><i></i><i></i><span>npm</span></div>
+                    <div class="term-body">
+                        <span class="c"># Node.js</span><br>
+                        <span class="p">$</span> npm install <span class="s">@msilabs/bkash</span><br>
+                        <span class="p">$</span> <span class=""></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -41,7 +49,11 @@
     .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
     .fine{margin-top:22px;font-size:14px;color:#8E9CBA}
 
-    .term{background:var(--navy-deep);border:1px solid rgba(255,255,255,.1);border-radius:16px;box-shadow:0 30px 60px -20px rgba(0,0,0,.5);overflow:hidden}
+    .terms{display:grid;gap:20px}
+    .term{position:relative;background:var(--navy-deep);border:1px solid rgba(255,255,255,.1);border-radius:16px;box-shadow:0 30px 60px -20px rgba(0,0,0,.5);overflow:hidden}
+    .term::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--acc)}
+    .term.laravel{--acc:#F05340}
+    .term.node{--acc:#5BAE57}
     .term-bar{display:flex;align-items:center;gap:7px;padding:13px 16px;border-bottom:1px solid rgba(255,255,255,.07)}
     .term-bar i{width:11px;height:11px;border-radius:50%;background:#2B3E60;display:block}
     .term-bar i:first-child{background:var(--sun)}
