@@ -8,7 +8,7 @@
                 <a href="{{ data.site.links.npm }}" target="_blank" rel="noopener">npm</a>
                 <a href="{{ data.site.links.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
             </div>
-            <p class="legal">© 2023–<span id="yr">{{ new Date().getFullYear() }}</span> msilabs. Start typing. Keep learning.<br>The bKash packages are community projects, not affiliated with or endorsed by bKash. bKash is a trademark of its respective owner.</p>
+            <p class="legal">© 2023–<span id="yr">{{ new Date().getFullYear() }}</span> msilabs. Start typing. Keep learning.<br>The bKash packages are community projects, not affiliated with or endorsed by bKash. bKash is a trademark of its respective owner.<br>This site is built with <a href="https://github.com/msilabs/alo" target="_blank" rel="noopener">Alo</a>.</p>
         </div>
     </footer>
 </template>
@@ -20,6 +20,8 @@
     .fl a{text-decoration:none;color:#C8D2E6}
     .fl a:hover{color:#fff}
     .legal{width:100%;border-top:1px solid rgba(255,255,255,.08);padding-top:22px;margin-top:6px;line-height:1.7}
+    .legal a{color:#C8D2E6}
+    .legal a:hover{color:#fff}
 </style>
 
 <style global>
