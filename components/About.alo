@@ -1,5 +1,5 @@
 <template>
-    <section id="about" aria-labelledby="what-title">
+    <section id="about" class="tint" aria-labelledby="what-title">
         <div class="wrap">
             <div class="head rv">
                 <div class="kicker">What msilabs does</div>

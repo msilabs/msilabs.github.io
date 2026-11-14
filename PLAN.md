@@ -99,9 +99,9 @@ Alo-র যেসব সীমা মাথায় রাখতে হবে:
 - [x] পাঠের নিজস্ব `title`, `description` আর `og:*`
 
 ### M6: হোমপেইজ নতুন করে সাজানো
-- [ ] `components/Learn.alo` হবে teaser: সর্বশেষ পাঠের কার্ড, simulator, Laravel সিরিজ (শীঘ্রই), আর "সব দেখুন → /learn/"
-- [ ] `components/Hero.alo`: একটা terminal-এ bKash, অন্যটায় Alo বা Adhar। CTA হবে "Explore projects", fine print-এ শুধু bKash-এর কথা নয়।
-- [ ] `pages/page.alo`-এ ক্রম: Hero, About, Framework, Packages, Tools, Learn, Story, Founder
+- [x] `components/Learn.alo` হবে teaser: সর্বশেষ পাঠের কার্ড, simulator, Laravel সিরিজ (শীঘ্রই), আর "সব দেখুন → /learn/"
+- [x] `components/Hero.alo`: একটা terminal-এ bKash, অন্যটায় Alo বা Adhar। CTA হবে "Explore projects", fine print-এ শুধু bKash-এর কথা নয়।
+- [x] `pages/page.alo`-এ ক্রম: Hero, About, Framework, Packages, Tools, Learn, Story, Founder
 
 ### M7: SEO আর share
 - [ ] `dist/sitemap.xml`-এ `/learn/...` পেইজগুলো আছে কিনা দেখুন

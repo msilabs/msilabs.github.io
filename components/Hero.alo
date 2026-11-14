@@ -4,29 +4,29 @@
             <div>
                 <span class="eyebrow"><i></i> Open source · Dhaka, Bangladesh</span>
                 <h1 id="hero-title">Start typing.<span class="l2">Keep learning.<span class="cursor" aria-hidden="true"></span></span></h1>
-                <p class="lead">msilabs makes free, open-source developer tools and beginner-friendly lessons for web developers. Built and maintained by one developer, in the open.</p>
+                <p class="lead">msilabs makes free, open-source frameworks, packages and tools for web developers, plus beginner-friendly lessons in Bangla. Built and maintained by one developer, in the open.</p>
                 <div class="cta">
-                    <a class="btn btn-mint" href="#packages">Explore packages</a>
+                    <a class="btn btn-mint" href="#framework">Explore projects</a>
                     <a class="btn btn-ghost" href="{{ data.site.links.github }}" target="_blank" rel="noopener">View on GitHub</a>
                 </div>
-                <p class="fine">Free &amp; open source (MIT) · Community packages, not affiliated with bKash</p>
+                <p class="fine">Free &amp; open source (MIT) · Frameworks, packages, browser tools and Bangla lessons</p>
             </div>
 
             <div class="terms" aria-hidden="true">
-                <div class="term laravel">
-                    <div class="term-bar"><i></i><i></i><i></i><span>composer</span></div>
+                <div class="term bkash">
+                    <div class="term-bar"><i></i><i></i><i></i><span>bkash</span></div>
                     <div class="term-body">
-                        <span class="c"># Laravel</span><br>
+                        <span class="c"># bKash payments, Laravel or Node.js</span><br>
                         <span class="p">$</span> composer require <span class="s">msilabs/bkash</span><br>
-                        <span class="p">$</span> <span class=""></span>
+                        <span class="p">$</span> npm install <span class="s">@msilabs/bkash</span>
                     </div>
                 </div>
-                <div class="term node">
-                    <div class="term-bar"><i></i><i></i><i></i><span>npm</span></div>
+                <div class="term alo">
+                    <div class="term-bar"><i></i><i></i><i></i><span>alo + adhar</span></div>
                     <div class="term-body">
-                        <span class="c"># Node.js</span><br>
-                        <span class="p">$</span> npm install <span class="s">@msilabs/bkash</span><br>
-                        <span class="p">$</span> <span class=""></span>
+                        <span class="c"># a static site and its API</span><br>
+                        <span class="p">$</span> npx <span class="s">@msilabs/alo</span> init my-site<br>
+                        <span class="p">$</span> npx <span class="s">@msilabs/adhar</span> init my-api --web
                     </div>
                 </div>
             </div>
@@ -52,17 +52,16 @@
     .terms{display:grid;gap:20px}
     .term{position:relative;background:var(--navy-deep);border:1px solid rgba(255,255,255,.1);border-radius:16px;box-shadow:0 30px 60px -20px rgba(0,0,0,.5);overflow:hidden}
     .term::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--acc)}
-    .term.laravel{--acc:#F05340}
-    .term.node{--acc:#5BAE57}
+    .term.bkash{--acc:#F05340}
+    .term.alo{--acc:var(--mint)}
     .term-bar{display:flex;align-items:center;gap:7px;padding:13px 16px;border-bottom:1px solid rgba(255,255,255,.07)}
     .term-bar i{width:11px;height:11px;border-radius:50%;background:#2B3E60;display:block}
     .term-bar i:first-child{background:var(--sun)}
     .term-bar span{margin-left:10px;font:400 13px var(--mono);color:#7F8DAA}
-    .term-body{padding:22px 22px 26px;font:400 14.5px/2 var(--mono);color:#C8D2E6;overflow-x:auto}
+    .term-body{padding:22px 22px 26px;font:400 14.5px/2 var(--mono);color:#C8D2E6;overflow-x:auto;white-space:nowrap}
     .term-body .c{color:#6F7F9C}
     .term-body .p{color:var(--mint)}
     .term-body .s{color:#FFD58A}
-    .term-body .cursor{height:1em;vertical-align:-.15em;width:.55em;margin-left:.2em;border-radius:1px}
 
     @media (max-width:960px){
         .hero{padding:68px 0 76px}

@@ -17,8 +17,8 @@
 <template>
     <Hero />
     <About />
-    <Packages />
     <Framework />
+    <Packages />
     <Tools />
     <Learn />
     <Story />

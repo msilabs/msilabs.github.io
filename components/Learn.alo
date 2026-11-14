@@ -1,44 +1,71 @@
 <template>
     <section id="learn" class="dark" aria-labelledby="learn-title">
-        <div class="wrap learn">
-            <div class="rv">
-                <span class="status"><i></i> In progress</span>
-                <div class="kicker">Learn</div>
-                <h2 id="learn-title">Laravel for Beginners</h2>
-                <p class="sub">A beginner-friendly series with animated explainers, so the ideas behind the framework make sense before the syntax does. New lessons are announced on the msilabs LinkedIn page.</p>
-                <a class="btn btn-mint" href="{{ data.site.links.linkedin }}" target="_blank" rel="noopener">Follow for new lessons</a>
-            </div>
-            <div class="card-lesson rv" aria-hidden="true">
-                <div class="t">Series · Laravel</div>
-                <h3>Start typing.</h3>
-                <p>Every developer starts with a blank file and a blinking cursor.</p>
-                <div class="code">
-                    <span class="c"># your first step</span><br>
-                    <span class="p">$</span> php artisan serve<br>
-                    <span class="p">$</span> <span class="cursor"></span>
+        <div class="wrap">
+            <div class="top rv">
+                <div>
+                    <div class="kicker">Learn</div>
+                    <h2 id="learn-title">Lessons in Bangla, made to be watched.</h2>
+                    <p class="sub">Short animated lessons that are plain HTML, not video: select the text, change the speed, read the full script. Plus simulators you can play with in the browser.</p>
                 </div>
+                <a class="btn btn-mint" href="/learn/">See all lessons →</a>
+            </div>
+
+            <div class="cards">
+                <template for="latest in data.courses.flatMap((c) => c.lessons.filter((l) => l.status !== 'soon').map((l) => ({ lesson: l, course: c }))).slice(-1)">
+                    <a class="card rv" href="/learn/{{ latest.course.id }}/{{ latest.lesson.slug }}/" lang="bn">
+                        <Learn.Cover color="{{ latest.course.color }}" icon="{{ latest.course.icon }}" thumb="{{ latest.lesson.thumb }}" label="{{ latest.lesson.duration }}" />
+                        <span class="tag new">নতুন পাঠ · {{ latest.course.title }}</span>
+                        <h3>{{ latest.lesson.title }}</h3>
+                        <p>{{ latest.lesson.description }}</p>
+                    </a>
+                </template>
+
+                <div class="card rv" lang="bn">
+                    <Learn.Cover color="indigo" icon="🧪" label="{{ String(data.interactive.length).replace(/\d/g, (d) => '০১২৩৪৫৬৭৮৯'[d]) }}টা simulator" open />
+                    <span class="tag">Interactive</span>
+                    <h3>নিজের হাতে করে দেখুন</h3>
+                    <ul>
+                        <template for="item in data.interactive">
+                            <li><a href="{{ item.href }}" target="_blank" rel="noopener">{{ item.name }}</a> <span>{{ item.meta }}</span></li>
+                        </template>
+                    </ul>
+                </div>
+
+                <template for="course in data.courses.filter((c) => c.status === 'soon')">
+                    <a class="card rv" href="/learn/{{ course.id }}/" lang="bn">
+                        <Learn.Cover color="{{ course.color }}" icon="{{ course.icon }}" soon />
+                        <span class="tag soon">সিরিজ · শীঘ্রই</span>
+                        <h3>{{ course.title }}</h3>
+                        <p>{{ course.description }}</p>
+                    </a>
+                </template>
             </div>
         </div>
     </section>
 </template>
 
 <style>
-    .learn{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
-    .status{display:inline-flex;align-items:center;gap:9px;font:600 13px/1 var(--sans);color:var(--sun);background:rgba(255,176,32,.12);border:1px solid rgba(255,176,32,.4);padding:8px 13px;border-radius:999px;margin-bottom:22px}
-    .status i{width:8px;height:8px;border-radius:50%;background:var(--sun);display:block;animation:pulse 1.8s ease-in-out infinite}
-    .learn .btn{margin-top:30px}
-    .card-lesson{background:var(--navy-soft);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:28px}
-    .card-lesson .t{font:600 13px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mint)}
-    .card-lesson h3{font-size:24px;letter-spacing:-.02em;margin:10px 0 6px}
-    .card-lesson p{color:#B8C4DC;font-size:15.5px}
-    .card-lesson .code{margin-top:22px;background:var(--navy-deep);border-radius:12px;padding:18px 18px;font:400 14px/1.9 var(--mono);color:#C8D2E6}
-    .card-lesson .code .c{color:#6F7F9C}.card-lesson .code .p{color:var(--mint)}
-    .card-lesson .code .cursor{width:.55em;height:1em;vertical-align:-.15em;border-radius:1px}
+    .top{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:44px}
+    .top .btn{flex:none}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .card{display:flex;flex-direction:column;padding:12px 12px 22px;border-radius:20px;background:var(--navy-soft);border:1px solid rgba(255,255,255,.08);color:#fff;text-decoration:none;transition:border-color .2s,transform .2s}
+    a.card:hover{border-color:rgba(30,214,168,.5);transform:translateY(-2px)}
+    .tag{margin:18px 8px 0;font-size:13px;font-weight:600;color:var(--mint)}
+    .tag.soon{color:var(--sun)}
+    .card h3{margin:8px 8px 6px;font-size:21px;line-height:1.35}
+    .card p{margin:0 8px;color:#B8C4DC;font-size:15.5px}
+    .card ul{list-style:none;margin:6px 8px 0;display:grid;gap:8px}
+    li{display:flex;justify-content:space-between;gap:12px;font-size:15.5px;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:8px}
+    li:last-child{border-bottom:0;padding-bottom:0}
+    li a{color:#fff;font-weight:600;text-decoration:none}
+    li a:hover{color:var(--mint)}
+    li span{color:#8E9CBA;font-size:14px}
 
     @media (max-width:960px){
-        .learn{grid-template-columns:1fr;gap:44px}
+        .top{flex-direction:column;align-items:flex-start}
+        .cards{grid-template-columns:1fr}
     }
     @media (prefers-reduced-motion:reduce){
-        .status i{animation:none}
+        .card{transition:none}
     }
 </style>
