@@ -1,5 +1,5 @@
 <template>
-    <a class="brand" href="#top" aria-label="{{ props.label }}">
+    <a class="brand" href="/#top" aria-label="{{ props.label }}">
         <img
             src="/logo.png"
             width="{{ props.size ?? 36 }}"
