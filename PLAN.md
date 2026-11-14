@@ -1,6 +1,6 @@
 # msilabs.github.io আপডেট প্ল্যান
 
-শুরু: ২০২৬-১১-১৪। সাইটটি এখনও শুধু bKash প্যাকেজ আর Laravel সিরিজের কথা বলে। এই প্ল্যানে যোগ হবে frameworks (Alo, Adhar), VS Code এক্সটেনশন, tools, আর একই সাইটে `/learn/`, যেখানে থাকবে HTML-ভিত্তিক ভিডিও পাঠ।
+শুরু: ২০২৬-১১-১৪। সাইটটি এখনও শুধু bKash প্যাকেজ আর Laravel সিরিজের কথা বলে। এই প্ল্যানে যোগ হবে frameworks (Alo, Adhar), VS Code এক্সটেনশন, tools আর simulator। HTML-ভিত্তিক ভিডিও পাঠ থাকবে আলাদা repo `msilabs/learn`-এ, যেটা চলে `msilabs.github.io/learn/` ঠিকানায়।
 
 ## কাজের নিয়ম
 
@@ -15,11 +15,9 @@
 - সাইটের পরিচয় বড় হবে: bKash প্যাকেজ, frameworks, tools আর lessons। পেইজের কাঠামো মোটামুটি একই থাকবে।
 - VS Code এক্সটেনশনের জন্য আলাদা section হবে না। এটা Framework section-এর ভেতরে একটা চওড়া কার্ড (strip) হিসেবে থাকবে।
 - Tools section-এ থাকবে CVবানাও, প্রজেক্ট হেলথ আর Poster maker। QR code generator বাদ।
-- Simulator-গুলো (Git, Scaling, চিহ্ন টাইপিং) যাবে `/learn/`-এ, "Interactive" কার্ড হিসেবে।
-- `/learn/` থাকবে এই সাইটেই, আলাদা repo-তে নয়। পাঠগুলো msilabs-এর নামে, আর msisaif.github.io-তে থাকবে শুধু লিংক।
-- `/learn/`-এ দুই স্তর: **course → পাঠ**। Topic-এর আলাদা পেইজ নেই, শুধু ফিল্টার chip।
-- Thumbnail ডেটা থেকে বানানো cover: gradient, icon, ▶ আর সময়। ঐচ্ছিক `thumb` PNG দিলে ওটা দেখাবে।
-- `/learn/`-এর লেখা বাংলায়, `lang="bn"` দিয়ে মোড়ানো। সাইটের বাকিটা ইংরেজি (`en`)।
+- Simulator-গুলো (Git, Scaling, চিহ্ন টাইপিং) থাকবে হোমপেইজের Learn section-এ।
+- **২০২৬-১১-১৪-এ বদলেছে:** পাঠগুলো এই সাইটে নয়, আলাদা repo `msilabs/learn`-এ (local: `../msilabs-learn/`)। GitHub project Pages হিসেবে ওটা চলে `msilabs.github.io/learn/` ঠিকানায়, তাই এই সাইটের nav-এর `/learn/` লিংক ওখানেই যায়। এই সাইটে `pages/learn/` ফোল্ডার রাখা যাবে না।
+- পাঠ, player আর scene-এর সব নিয়ম আছে `../msilabs-learn/README.md`-এ। msisaif.github.io-তে থাকবে শুধু লিংক।
 - Nav: **Frameworks · Tools · Learn · About**। Story nav থেকে বাদ, section হিসেবে থাকবে।
 
 ## তথ্যসূত্র
@@ -30,7 +28,7 @@
 | Adhar | `@msilabs/adhar` 1.2.0। `init my-api --web` দিলে full stack। Docs: https://msilabs.github.io/adhar/ |
 | VS Code | `msilabs.alo-vscode`। install: `code --install-extension msilabs.alo-vscode`। https://marketplace.visualstudio.com/items?itemName=msilabs.alo-vscode, GitHub: https://github.com/msilabs/alo-vscode |
 | npm org | https://www.npmjs.com/org/msilabs |
-| এখনকার Alo dependency | `package.json`-এ `^1.1.0`, install করা আছে 1.1.0 |
+| Alo dependency | `package.json`-এ `^1.2.0` (M1-এ আপডেট করা) |
 
 Tools আর simulator (সবগুলো চালু আছে, যাচাই করা হয়েছে; local ফোল্ডার `/Users/msi/msilabs/projects/`):
 
@@ -45,22 +43,9 @@ Tools আর simulator (সবগুলো চালু আছে, যাচা�
 
 প্রতিটার GitHub লিংক: `https://github.com/msilabs/<ফোল্ডারের নাম>`।
 
-HTTPS পাঠের উৎস: `../alo-https-player/`
-
-| উৎস | গন্তব্য |
-| --- | --- |
-| `components/Player.alo` | `components/learn/Player.alo` → `<Learn.Player>` |
-| `components/HttpsScene.alo` | `components/scenes/Https.alo` → `<Scenes.Https />` |
-| `components/ScriptList.alo` | `components/learn/Script.alo` → `<Learn.Script>` |
-| `data/lesson.json` | `data/timelines/https.json` |
-| `public/narration.mp3` | `public/audio/https.mp3` (`old-narration.mp3` আনবেন না) |
-| `global/theme.css` (লাইট আর ডার্ক থিম) | msilabs-এর token-এ বদলে নিন (navy, mint, sun) |
-
 Alo-র যেসব সীমা মাথায় রাখতে হবে:
 
-- `[slug]` এক স্তরের বেশি হয় না, আর পাথের শেষে থাকতে হয়। প্রতিটা পাঠের Scene component আলাদা, তাই পাঠের পেইজগুলো সাধারণ ফোল্ডার।
-- `data/timelines/` ফোল্ডারে শুধু ফাইল আছে, তাই এটা একটা **array**। খুঁজতে হবে `slug` দিয়ে: `data.timelines.find(t => t.slug === 'https')`।
-- মূল `pages/layout.alo` `/learn/`-এর পেইজগুলোকেও মোড়ায়, তাই Header আর Footer-এর লিংক হতে হবে `/#framework` আকারে, শুধু `#framework` নয়।
+- মূল `pages/layout.alo` সব পেইজকে মোড়ায়, তাই Header আর Footer-এর লিংক হতে হবে `/#framework` আকারে, শুধু `#framework` নয়।
 
 ## Milestones
 
@@ -83,7 +68,7 @@ Alo-র যেসব সীমা মাথায় রাখতে হবে:
 - [x] `data/tools.json` (`packages.json`-এর ধাঁচে) আর `components/ToolCard.alo`
 - [x] `components/Tools.alo`, `id="tools"`। কার্ড: CVবানাও, প্রজেক্ট হেলথ ("Built with Alo" badge), Poster maker। প্রতিটায় Open আর GitHub লিংক।
 
-### M4: `/learn/`-এর কাঠামো
+### M4: `/learn/`-এর কাঠামো (পরে `msilabs/learn`-এ সরানো হয়েছে)
 - [x] `pages/learn/layout.alo`: ভেতরে `<div lang="bn"><slot /></div>`
 - [x] `data/courses.json`: course (`id`, `title`, `description`, `topic`, `color`, `icon`, `lessons[]`) আর পাঠ (`slug`, `title`, `duration`, `status`: `"soon"` ঐচ্ছিক, `thumb` ঐচ্ছিক)। Interactive কার্ডের জন্য আলাদা `data/interactive.json`।
 - [x] `pages/learn/page.alo`: শিরোনাম, topic chip-এর ফিল্টার (ছোট `<script>`), course grid আর Interactive grid
@@ -91,7 +76,7 @@ Alo-র যেসব সীমা মাথায় রাখতে হবে:
 - [x] `pages/learn/web/page.alo` আর `pages/learn/laravel/page.alo`: প্রতিটা ৩–৪ লাইন, `<Learn.Course id="…" />`
 - [x] শুরুর course দুটো: "ওয়েব কীভাবে চলে" (`web`, HTTPS পাঠ) আর "Laravel for Beginners" (`laravel`, শীঘ্রই)। কোনো বানানো পাঠ রাখবেন না।
 
-### M5: HTTPS পাঠ আনা
+### M5: HTTPS পাঠ আনা (পরে `msilabs/learn`-এ সরানো হয়েছে)
 - [x] উপরের টেবিল অনুযায়ী ফাইলগুলো আনুন আর component-এর নাম বদলান
 - [x] অডিওর পাথ হবে `/audio/https.mp3`
 - [x] থিম msilabs-এর token-এ বদলান
@@ -99,21 +84,23 @@ Alo-র যেসব সীমা মাথায় রাখতে হবে:
 - [x] পাঠের নিজস্ব `title`, `description` আর `og:*`
 
 ### M6: হোমপেইজ নতুন করে সাজানো
-- [x] `components/Learn.alo` হবে teaser: সর্বশেষ পাঠের কার্ড, simulator, Laravel সিরিজ (শীঘ্রই), আর "সব দেখুন → /learn/"
+- [x] `components/Learn.alo`: Git Simulator, Scaling Simulator আর চিহ্ন টাইপিং-এর কার্ড, আর "Lessons in Bangla → /learn/"
 - [x] `components/Hero.alo`: একটা terminal-এ bKash, অন্যটায় Alo বা Adhar। CTA হবে "Explore projects", fine print-এ শুধু bKash-এর কথা নয়।
 - [x] `pages/page.alo`-এ ক্রম: Hero, About, Framework, Packages, Tools, Learn, Story, Founder
 
 ### M7: SEO আর share
-- [x] `dist/sitemap.xml`-এ `/learn/...` পেইজগুলো আছে কিনা দেখুন
-- [ ] **ব্যবহারকারীর কাজ:** নতুন `public/og.png` (এখনেরটা শুধু bKash দেখায়) আর HTTPS পাঠের preview PNG। ছবি পেলে জায়গামতো বসান।
+- [x] `dist/sitemap.xml` দেখা (`/learn/...`-এর sitemap এখন `msilabs/learn` repo-র নিজের)
+- [ ] **ব্যবহারকারীর কাজ:** নতুন `public/og.png` (এখনেরটা শুধু bKash দেখায়)। HTTPS পাঠের preview PNG যাবে `msilabs/learn` repo-তে, পাঠের JSON-এর `thumb`-এ।
 
 ### M8: পোর্টফোলিও (আলাদা repo, ঐচ্ছিক)
 - [ ] `../msisaif.github.io/`-এর OpenSource অংশে Alo, Adhar, VS Code আর msilabs lessons (`/learn/`)-এর লিংক
 
+## M9: পাঠ আলাদা repo-তে সরানো
+- [x] `msilabs/learn` (`../msilabs-learn/`): dark premium ডিজাইন, generic player, data-driven scene, `--base /learn/` দিয়ে deploy
+- [x] এই সাইট থেকে `pages/learn/`, `components/learn/`, `components/scenes/`, `data/courses.json`, `data/timelines/` আর `public/audio/` সরানো
+- [x] হোমের Learn section-এ শুধু simulator আর `/learn/`-এর লিংক
+- [ ] **ব্যবহারকারীর কাজ:** `msilabs/learn` repo-র Settings → Pages-এ Source হিসেবে "GitHub Actions" বেছে নেওয়া, তারপর `feat/learn-site` merge করা
+
 ## নতুন পাঠ যোগ করার নিয়ম
 
-1. `data/timelines/<slug>.json`: ক্যাপশন আর সময়ের টাইমলাইন (`slug` লিখবেন না, ফাইলের নাম থেকে আসে)
-2. `components/scenes/<Name>.alo`: দৃশ্য
-3. `public/audio/<slug>.mp3`: ধারাবর্ণনা
-4. `pages/learn/<course>/<slug>/page.alo`: `<Learn.Lesson course="…" slug="…">`-এর ভেতরে `<Learn.Player>` আর `<Scenes.Name />` (নমুনা: `pages/learn/web/https/page.alo`)। breadcrumb, স্ক্রিপ্ট আর আগের/পরের পাঠ `<Learn.Lesson>` নিজেই বসায়।
-5. `data/courses.json`: সেই course-এর `lessons`-এ এক লাইন
+দেখুন `../msilabs-learn/README.md`। নতুন পাঠ মানে একটা JSON আর একটা mp3, কোনো component লিখতে হয় না।

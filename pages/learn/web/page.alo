@@ -1,9 +1,0 @@
-<head>
-    <title>ওয়েব কীভাবে চলে | শিখুন | msilabs</title>
-    <meta name="description" content="{{ data.courses.find((c) => c.id === 'web').description }}">
-    <link rel="canonical" href="{{ data.site.url }}/learn/web/">
-</head>
-
-<template>
-    <Learn.Course id="web" />
-</template>

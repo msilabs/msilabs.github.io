@@ -4,40 +4,27 @@
             <div class="top rv">
                 <div>
                     <div class="kicker">Learn</div>
-                    <h2 id="learn-title">Lessons in Bangla, made to be watched.</h2>
-                    <p class="sub">Short animated lessons that are plain HTML, not video: select the text, change the speed, read the full script. Plus simulators you can play with in the browser.</p>
+                    <h2 id="learn-title">Learn by doing, right in the browser.</h2>
+                    <p class="sub">Simulators and games that explain developer ideas in Bangla. For animated lessons, visit <span lang="bn">msilabs শিখুন</span>.</p>
                 </div>
-                <a class="btn btn-mint" href="/learn/">See all lessons →</a>
+                <a class="btn btn-mint" href="/learn/">Lessons in Bangla →</a>
             </div>
 
             <div class="cards">
-                <template for="latest in data.courses.flatMap((c) => c.lessons.filter((l) => l.status !== 'soon').map((l) => ({ lesson: l, course: c }))).slice(-1)">
-                    <a class="card rv" href="/learn/{{ latest.course.id }}/{{ latest.lesson.slug }}/" lang="bn">
-                        <Learn.Cover color="{{ latest.course.color }}" icon="{{ latest.course.icon }}" thumb="{{ latest.lesson.thumb }}" label="{{ latest.lesson.duration }}" />
-                        <span class="tag new">নতুন পাঠ · {{ latest.course.title }}</span>
-                        <h3>{{ latest.lesson.title }}</h3>
-                        <p>{{ latest.lesson.description }}</p>
-                    </a>
-                </template>
-
-                <div class="card rv" lang="bn">
-                    <Learn.Cover color="indigo" icon="🧪" label="{{ String(data.interactive.length).replace(/\d/g, (d) => '০১২৩৪৫৬৭৮৯'[d]) }}টা simulator" open />
-                    <span class="tag">Interactive</span>
-                    <h3>নিজের হাতে করে দেখুন</h3>
-                    <ul>
-                        <template for="item in data.interactive">
-                            <li><a href="{{ item.href }}" target="_blank" rel="noopener">{{ item.name }}</a> <span>{{ item.meta }}</span></li>
-                        </template>
-                    </ul>
-                </div>
-
-                <template for="course in data.courses.filter((c) => c.status === 'soon')">
-                    <a class="card rv" href="/learn/{{ course.id }}/" lang="bn">
-                        <Learn.Cover color="{{ course.color }}" icon="{{ course.icon }}" soon />
-                        <span class="tag soon">সিরিজ · শীঘ্রই</span>
-                        <h3>{{ course.title }}</h3>
-                        <p>{{ course.description }}</p>
-                    </a>
+                <template for="item in data.interactive">
+                    <article class="card {{ item.color }} rv">
+                        <div class="art" aria-hidden="true">
+                            <span class="icon">{{ item.icon }}</span>
+                            <span class="meta" lang="bn">{{ item.meta }}</span>
+                        </div>
+                        <span class="tag">Interactive · <span lang="bn">{{ item.topic }}</span></span>
+                        <h3 lang="bn"><a href="{{ item.href }}" target="_blank" rel="noopener">{{ item.name }}</a></h3>
+                        <p lang="bn">{{ item.description }}</p>
+                        <div class="links">
+                            <a class="open" href="{{ item.href }}" target="_blank" rel="noopener">Open ↗</a>
+                            <a href="{{ item.github }}" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                    </article>
                 </template>
             </div>
         </div>
@@ -48,18 +35,25 @@
     .top{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:44px}
     .top .btn{flex:none}
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-    .card{display:flex;flex-direction:column;padding:12px 12px 22px;border-radius:20px;background:var(--navy-soft);border:1px solid rgba(255,255,255,.08);color:#fff;text-decoration:none;transition:border-color .2s,transform .2s}
-    a.card:hover{border-color:rgba(30,214,168,.5);transform:translateY(-2px)}
-    .tag{margin:18px 8px 0;font-size:13px;font-weight:600;color:var(--mint)}
-    .tag.soon{color:var(--sun)}
-    .card h3{margin:8px 8px 6px;font-size:21px;line-height:1.35}
-    .card p{margin:0 8px;color:#B8C4DC;font-size:15.5px}
-    .card ul{list-style:none;margin:6px 8px 0;display:grid;gap:8px}
-    li{display:flex;justify-content:space-between;gap:12px;font-size:15.5px;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:8px}
-    li:last-child{border-bottom:0;padding-bottom:0}
-    li a{color:#fff;font-weight:600;text-decoration:none}
-    li a:hover{color:var(--mint)}
-    li span{color:#8E9CBA;font-size:14px}
+    .card{display:flex;flex-direction:column;padding:12px 12px 22px;border-radius:20px;background:var(--navy-soft);border:1px solid rgba(255,255,255,.08);transition:border-color .2s,transform .2s}
+    .card:hover{border-color:rgba(30,214,168,.5);transform:translateY(-2px)}
+    .card.mint{--c:#0B7F6E}
+    .card.sun{--c:#B7791F}
+    .card.indigo{--c:#4F46E5}
+    .art{position:relative;aspect-ratio:16/9;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#14213D,var(--c));overflow:hidden}
+    .art::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 15%,rgba(255,255,255,.18),transparent 55%)}
+    .icon{font-size:64px;line-height:1;filter:drop-shadow(0 6px 14px rgba(0,0,0,.25))}
+    .meta{position:absolute;right:12px;bottom:12px;font:600 12.5px/1 var(--sans-bn);padding:6px 9px;border-radius:7px;background:rgba(14,24,45,.75);color:#fff;z-index:1}
+    .tag{margin:18px 8px 0;font:600 12px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mint)}
+    .tag span{font-family:var(--sans-bn);letter-spacing:0}
+    h3{margin:8px 8px 6px;font-size:21px;line-height:1.35}
+    h3 a{color:#fff;text-decoration:none}
+    h3 a:hover{color:var(--mint)}
+    .card p{margin:0 8px 18px;color:#B8C4DC;font-size:15.5px}
+    .links{display:flex;gap:18px;margin:auto 8px 0;font-size:15px;font-weight:600}
+    .links a{color:#C8D2E6;text-decoration:none}
+    .links a.open{color:var(--mint)}
+    .links a:hover{text-decoration:underline}
 
     @media (max-width:960px){
         .top{flex-direction:column;align-items:flex-start}

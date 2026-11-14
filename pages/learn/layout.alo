@@ -1,9 +1,0 @@
-<template>
-    <div class="learn" lang="bn"><slot /></div>
-</template>
-
-<style global>
-    .learn h1,.learn h2,.learn h3{letter-spacing:-.01em}
-    .learn .btn{font-family:var(--sans-bn)}
-    .learn [hidden]{display:none !important}
-</style>
