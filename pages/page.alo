@@ -5,11 +5,11 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ data.site.url }}/">
     <meta property="og:title" content="{{ data.site.title }}">
-    <meta property="og:description" content="Free, open-source developer tools and beginner-friendly lessons, built by one developer in Bangladesh.">
+    <meta property="og:description" content="Free, open-source frameworks, packages, browser tools and beginner-friendly lessons, built by one developer in Bangladesh.">
     <meta property="og:image" content="{{ data.site.url }}/og.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="msilabs. Start typing. Keep learning. Open-source bKash packages for Laravel and Node.js.">
+    <meta property="og:image:alt" content="msilabs. Start typing. Keep learning. Open-source frameworks, bKash packages, developer tools and lessons.">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="{{ data.site.url }}/og.png">
 </head>
@@ -17,8 +17,9 @@
 <template>
     <Hero />
     <About />
-    <Packages />
     <Framework />
+    <Packages />
+    <Tools />
     <Learn />
     <Story />
     <Founder />

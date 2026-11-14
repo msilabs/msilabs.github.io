@@ -1,20 +1,22 @@
 {
     "name": "msilabs",
     "title": "msilabs · Start typing. Keep learning.",
-    "description": "msilabs builds free, open-source developer tools and beginner-friendly learning content. bKash payment packages for Laravel and Node.js, plus a Laravel series in progress.",
+    "description": "msilabs builds free, open-source developer tools and beginner-friendly lessons: bKash payment packages, the Alo and Adhar frameworks, a VS Code extension, browser tools and animated lessons in Bangla.",
     "lang": "en",
     "url": "https://msilabs.github.io",
     "nav": [
-        { "href": "#packages", "label": "Packages" },
-        { "href": "#learn", "label": "Learn" },
-        { "href": "#story", "label": "Story" },
-        { "href": "#about", "label": "About" }
+        { "href": "/#framework", "label": "Frameworks" },
+        { "href": "/#tools", "label": "Tools" },
+        { "href": "/learn/", "label": "Learn" },
+        { "href": "/#about", "label": "About" }
     ],
     "links": {
         "github": "https://github.com/msilabs",
         "linkedin": "https://www.linkedin.com/company/msilabs",
         "packagist": "https://packagist.org/packages/msilabs/bkash",
-        "npm": "https://www.npmjs.com/package/@msilabs/bkash",
+        "npm": "https://www.npmjs.com/org/msilabs",
+        "vscode": "https://marketplace.visualstudio.com/items?itemName=msilabs.alo-vscode",
+        "aloDocs": "https://msilabs.github.io/alo/",
         "portfolio": "https://msisaif.github.io"
     }
 }

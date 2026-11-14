@@ -20,9 +20,23 @@
         "text": "brings the same integration to Node.js, Bun, Deno and the edge."
     },
     {
+        "datetime": "2026-11",
+        "label": "Nov 2026",
+        "title": "A framework of my own",
+        "code": "Alo 1.0",
+        "text": "ships: a small static site framework with zero dependencies."
+    },
+    {
+        "datetime": "2026-11",
+        "label": "Nov 2026",
+        "title": "The full stack",
+        "code": "Adhar 1.0",
+        "text": "adds the API side, and a VS Code extension brings Alo and Adhar together in the editor."
+    },
+    {
         "now": true,
         "label": "Now",
         "title": "Teaching what I build",
-        "text": "The Laravel for Beginners series is in progress."
+        "text": "Animated lessons in Bangla are starting at /learn/, beginning with how HTTPS works. The Laravel series is in progress."
     }
 ]

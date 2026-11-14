@@ -1,0 +1,48 @@
+<template>
+    <article class="tool {{ props.tool.accent }} rv">
+        <span class="tag"><i></i> {{ props.tool.tag }}</span>
+        <h3 lang="{{ props.tool.nameLang }}">{{ props.tool.name }}</h3>
+        <p class="d">{{ props.tool.description }}</p>
+        <ul>
+            <template for="feature in props.tool.features">
+                <li>{{ feature }}</li>
+            </template>
+        </ul>
+        <div class="tlinks">
+            <template for="(link, i) in props.tool.links">
+                <a class="{{ i === 0 ? 'btn btn-mint' : 'more' }}" href="{{ link.href }}" target="_blank" rel="noopener">{{ link.label }}</a>
+            </template>
+            <template if="props.tool.builtWithAlo">
+                <span class="alo">Built with Alo</span>
+            </template>
+        </div>
+    </article>
+</template>
+
+<style>
+    .tool{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:box-shadow .2s,transform .2s}
+    .tool:hover{box-shadow:0 24px 48px -28px rgba(20,33,61,.35);transform:translateY(-2px)}
+    .tool::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--acc)}
+    .tool.cv{--acc:var(--mint)}
+    .tool.health{--acc:var(--indigo)}
+    .tool.poster{--acc:var(--sun)}
+    .tag{display:inline-flex;align-items:center;gap:8px;font:500 12px/1 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--slate)}
+    .tag i{width:9px;height:9px;border-radius:50%;background:var(--acc);display:block}
+    .alo{margin-left:auto;font:600 12px/1 var(--sans);padding:6px 10px;border-radius:999px;background:rgba(255,176,32,.14);color:#9A6200;border:1px solid rgba(255,176,32,.4)}
+    .tool h3{font-size:24px;line-height:1.25;letter-spacing:-.015em;margin:16px 0 10px}
+    .tool p.d{color:var(--slate);font-size:16px}
+    .tool ul{list-style:none;margin:18px 0 24px;display:grid;gap:9px}
+    .tool li{position:relative;padding-left:24px;font-size:15px}
+    .tool li::before{content:"";position:absolute;left:2px;top:.5em;width:11px;height:6px;border-left:2.5px solid var(--teal);border-bottom:2.5px solid var(--teal);transform:rotate(-45deg) translateY(-3px)}
+    .tlinks{display:flex;align-items:center;gap:18px;margin-top:auto}
+    .tlinks .btn{padding:11px 18px;font-size:14.5px}
+    .tlinks .more{color:var(--teal);font-weight:600;font-size:15px;text-decoration:none;border-bottom:2px solid transparent}
+    .tlinks .more:hover{border-color:var(--teal)}
+
+    @media (max-width:640px){
+        .tool{padding:24px 22px}
+    }
+    @media (prefers-reduced-motion:reduce){
+        .tool{transition:none}
+    }
+</style>

@@ -1,0 +1,50 @@
+[
+    {
+        "accent": "cv",
+        "tag": "CV · README · Portfolio",
+        "name": "CVবানাও",
+        "nameLang": "bn",
+        "description": "A CV builder for developers. Fill in your details once and get an ATS-friendly PDF, a GitHub profile README and a one-page portfolio site.",
+        "features": [
+            "Six CV templates with a live A4 preview",
+            "Bangladeshi formats: CGPA, SSC/HSC GPA, +880",
+            "No login, no server: your data stays in the browser"
+        ],
+        "links": [
+            { "label": "Open", "href": "https://msilabs.github.io/msilabs-cv-builder/" },
+            { "label": "GitHub", "href": "https://github.com/msilabs/msilabs-cv-builder" }
+        ]
+    },
+    {
+        "accent": "health",
+        "tag": "Versions · End of life",
+        "name": "প্রজেক্ট হেলথ",
+        "nameLang": "bn",
+        "builtWithAlo": true,
+        "description": "A dashboard for the frameworks and server software your projects run on, and when each version stops getting support.",
+        "features": [
+            "What to upgrade now, and what can wait",
+            "Checks that the server runtime fits the framework",
+            "Data lives in the browser, with JSON export and import"
+        ],
+        "links": [
+            { "label": "Open", "href": "https://msilabs.github.io/project-health-dashboard/" },
+            { "label": "GitHub", "href": "https://github.com/msilabs/project-health-dashboard" }
+        ]
+    },
+    {
+        "accent": "poster",
+        "tag": "Code · Social posts",
+        "name": "Poster maker",
+        "description": "Paste a code snippet and get a poster with a Bangla title and explanation, sized for Facebook and LinkedIn.",
+        "features": [
+            "Square, portrait and wide sizes",
+            "Themes, Bangla fonts and code colors",
+            "Save as PNG or copy the image"
+        ],
+        "links": [
+            { "label": "Open", "href": "https://msilabs.github.io/msilabs-poster-maker/" },
+            { "label": "GitHub", "href": "https://github.com/msilabs/msilabs-poster-maker" }
+        ]
+    }
+]

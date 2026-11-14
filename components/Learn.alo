@@ -1,44 +1,65 @@
 <template>
     <section id="learn" class="dark" aria-labelledby="learn-title">
-        <div class="wrap learn">
-            <div class="rv">
-                <span class="status"><i></i> In progress</span>
-                <div class="kicker">Learn</div>
-                <h2 id="learn-title">Laravel for Beginners</h2>
-                <p class="sub">A beginner-friendly series with animated explainers, so the ideas behind the framework make sense before the syntax does. New lessons are announced on the msilabs LinkedIn page.</p>
-                <a class="btn btn-mint" href="{{ data.site.links.linkedin }}" target="_blank" rel="noopener">Follow for new lessons</a>
-            </div>
-            <div class="card-lesson rv" aria-hidden="true">
-                <div class="t">Series · Laravel</div>
-                <h3>Start typing.</h3>
-                <p>Every developer starts with a blank file and a blinking cursor.</p>
-                <div class="code">
-                    <span class="c"># your first step</span><br>
-                    <span class="p">$</span> php artisan serve<br>
-                    <span class="p">$</span> <span class="cursor"></span>
+        <div class="wrap">
+            <div class="top rv">
+                <div>
+                    <div class="kicker">Learn</div>
+                    <h2 id="learn-title">Learn by doing, right in the browser.</h2>
+                    <p class="sub">Simulators and games that explain developer ideas in Bangla. For animated lessons, visit <span lang="bn">msilabs শিখুন</span>.</p>
                 </div>
+                <a class="btn btn-mint" href="/learn/">Lessons in Bangla →</a>
+            </div>
+
+            <div class="cards">
+                <template for="item in data.interactive">
+                    <article class="card {{ item.color }} rv">
+                        <div class="art" aria-hidden="true">
+                            <span class="icon">{{ item.icon }}</span>
+                            <span class="meta" lang="bn">{{ item.meta }}</span>
+                        </div>
+                        <span class="tag">Interactive · <span lang="bn">{{ item.topic }}</span></span>
+                        <h3 lang="bn"><a href="{{ item.href }}" target="_blank" rel="noopener">{{ item.name }}</a></h3>
+                        <p lang="bn">{{ item.description }}</p>
+                        <div class="links">
+                            <a class="open" href="{{ item.href }}" target="_blank" rel="noopener">Open ↗</a>
+                            <a href="{{ item.github }}" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                    </article>
+                </template>
             </div>
         </div>
     </section>
 </template>
 
 <style>
-    .learn{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
-    .status{display:inline-flex;align-items:center;gap:9px;font:600 13px/1 var(--sans);color:var(--sun);background:rgba(255,176,32,.12);border:1px solid rgba(255,176,32,.4);padding:8px 13px;border-radius:999px;margin-bottom:22px}
-    .status i{width:8px;height:8px;border-radius:50%;background:var(--sun);display:block;animation:pulse 1.8s ease-in-out infinite}
-    .learn .btn{margin-top:30px}
-    .card-lesson{background:var(--navy-soft);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:28px}
-    .card-lesson .t{font:600 13px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mint)}
-    .card-lesson h3{font-size:24px;letter-spacing:-.02em;margin:10px 0 6px}
-    .card-lesson p{color:#B8C4DC;font-size:15.5px}
-    .card-lesson .code{margin-top:22px;background:var(--navy-deep);border-radius:12px;padding:18px 18px;font:400 14px/1.9 var(--mono);color:#C8D2E6}
-    .card-lesson .code .c{color:#6F7F9C}.card-lesson .code .p{color:var(--mint)}
-    .card-lesson .code .cursor{width:.55em;height:1em;vertical-align:-.15em;border-radius:1px}
+    .top{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:44px}
+    .top .btn{flex:none}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .card{display:flex;flex-direction:column;padding:12px 12px 22px;border-radius:20px;background:var(--navy-soft);border:1px solid rgba(255,255,255,.08);transition:border-color .2s,transform .2s}
+    .card:hover{border-color:rgba(30,214,168,.5);transform:translateY(-2px)}
+    .card.mint{--c:#0B7F6E}
+    .card.sun{--c:#B7791F}
+    .card.indigo{--c:#4F46E5}
+    .art{position:relative;aspect-ratio:16/9;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#14213D,var(--c));overflow:hidden}
+    .art::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 15%,rgba(255,255,255,.18),transparent 55%)}
+    .icon{font-size:64px;line-height:1;filter:drop-shadow(0 6px 14px rgba(0,0,0,.25))}
+    .meta{position:absolute;right:12px;bottom:12px;font:600 12.5px/1 var(--sans-bn);padding:6px 9px;border-radius:7px;background:rgba(14,24,45,.75);color:#fff;z-index:1}
+    .tag{margin:18px 8px 0;font:600 12px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mint)}
+    .tag span{font-family:var(--sans-bn);letter-spacing:0}
+    h3{margin:8px 8px 6px;font-size:21px;line-height:1.35}
+    h3 a{color:#fff;text-decoration:none}
+    h3 a:hover{color:var(--mint)}
+    .card p{margin:0 8px 18px;color:#B8C4DC;font-size:15.5px}
+    .links{display:flex;gap:18px;margin:auto 8px 0;font-size:15px;font-weight:600}
+    .links a{color:#C8D2E6;text-decoration:none}
+    .links a.open{color:var(--mint)}
+    .links a:hover{text-decoration:underline}
 
     @media (max-width:960px){
-        .learn{grid-template-columns:1fr;gap:44px}
+        .top{flex-direction:column;align-items:flex-start}
+        .cards{grid-template-columns:1fr}
     }
     @media (prefers-reduced-motion:reduce){
-        .status i{animation:none}
+        .card{transition:none}
     }
 </style>

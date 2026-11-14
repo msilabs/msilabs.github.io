@@ -26,6 +26,7 @@
     .nav .btn{padding:10px 16px;font-size:14px}
 
     @media (max-width:640px){
-        .links a:not(.btn){display:none}
+        .links{gap:18px}
+        .links a:not(.btn):not([href="/learn/"]){display:none}
     }
 </style>
