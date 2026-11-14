@@ -104,7 +104,7 @@ Alo-র যেসব সীমা মাথায় রাখতে হবে:
 - [x] `pages/page.alo`-এ ক্রম: Hero, About, Framework, Packages, Tools, Learn, Story, Founder
 
 ### M7: SEO আর share
-- [ ] `dist/sitemap.xml`-এ `/learn/...` পেইজগুলো আছে কিনা দেখুন
+- [x] `dist/sitemap.xml`-এ `/learn/...` পেইজগুলো আছে কিনা দেখুন
 - [ ] **ব্যবহারকারীর কাজ:** নতুন `public/og.png` (এখনেরটা শুধু bKash দেখায়) আর HTTPS পাঠের preview PNG। ছবি পেলে জায়গামতো বসান।
 
 ### M8: পোর্টফোলিও (আলাদা repo, ঐচ্ছিক)
