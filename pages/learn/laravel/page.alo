@@ -1,0 +1,9 @@
+<head>
+    <title>Laravel for Beginners | শিখুন | msilabs</title>
+    <meta name="description" content="{{ data.courses.find((c) => c.id === 'laravel').description }}">
+    <link rel="canonical" href="{{ data.site.url }}/learn/laravel/">
+</head>
+
+<template>
+    <Learn.Course id="laravel" />
+</template>

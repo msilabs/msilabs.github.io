@@ -1,0 +1,92 @@
+<template>
+    <div class="course">
+        <template for="course in data.courses.filter((c) => c.id === props.id)">
+            <section class="dark top">
+                <div class="wrap">
+                    <nav class="crumbs" aria-label="Breadcrumb">
+                        <a href="/learn/">শিখুন</a>
+                        <span aria-hidden="true">/</span>
+                        <span aria-current="page">{{ course.title }}</span>
+                    </nav>
+                    <div class="kicker">{{ course.topic }}</div>
+                    <h1>{{ course.title }}</h1>
+                    <p class="sub">{{ course.description }}</p>
+                </div>
+            </section>
+
+            <section class="lessons">
+                <div class="wrap">
+                    <template if="course.lessons.length">
+                        <ol class="list">
+                            <template for="(lesson, i) in course.lessons">
+                                <li>
+                                    <template if="lesson.status === 'soon'">
+                                        <div class="row off">
+                                            <Learn.Cover class="thumb" color="{{ course.color }}" icon="{{ course.icon }}" thumb="{{ lesson.thumb }}" soon />
+                                            <div class="info">
+                                                <span class="num">পাঠ {{ String(i + 1).replace(/\d/g, (d) => '০১২৩৪৫৬৭৮৯'[d]) }}</span>
+                                                <h2>{{ lesson.title }}</h2>
+                                                <p>{{ lesson.description }}</p>
+                                            </div>
+                                        </div>
+                                    </template>
+                                    <template else>
+                                        <a class="row" href="/learn/{{ course.id }}/{{ lesson.slug }}/">
+                                            <Learn.Cover class="thumb" color="{{ course.color }}" icon="{{ course.icon }}" thumb="{{ lesson.thumb }}" label="{{ lesson.duration }}" />
+                                            <div class="info">
+                                                <span class="num">পাঠ {{ String(i + 1).replace(/\d/g, (d) => '০১২৩৪৫৬৭৮৯'[d]) }}</span>
+                                                <h2>{{ lesson.title }}</h2>
+                                                <p>{{ lesson.description }}</p>
+                                            </div>
+                                        </a>
+                                    </template>
+                                </li>
+                            </template>
+                        </ol>
+                    </template>
+                    <template else>
+                        <div class="empty">
+                            <span class="badge">শীঘ্রই</span>
+                            <h2>এই course-এর পাঠ তৈরি হচ্ছে।</h2>
+                            <p>নতুন পাঠ এলে msilabs-এর LinkedIn পেইজে জানানো হয়।</p>
+                            <a class="btn btn-mint" href="{{ data.site.links.linkedin }}" target="_blank" rel="noopener">LinkedIn-এ follow করুন</a>
+                        </div>
+                    </template>
+                    <p class="back"><a href="/learn/">← সব পাঠ</a></p>
+                </div>
+            </section>
+        </template>
+    </div>
+</template>
+
+<style>
+    .top{padding:56px 0 64px}
+    .crumbs{display:flex;flex-wrap:wrap;gap:8px;font-size:14.5px;color:#8E9CBA;margin-bottom:28px}
+    .crumbs a{color:var(--mint);text-decoration:none}
+    .crumbs a:hover{text-decoration:underline}
+    h1{font-size:clamp(32px,5vw,48px);line-height:1.2;font-weight:700;margin:14px 0 14px}
+    .lessons{padding:56px 0 80px}
+    .list{list-style:none;display:grid;gap:18px}
+    .row{display:grid;grid-template-columns:240px 1fr;gap:24px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:18px;background:#fff;text-decoration:none;color:inherit;transition:box-shadow .2s,transform .2s}
+    a.row:hover{box-shadow:0 24px 48px -28px rgba(20,33,61,.35);transform:translateY(-2px)}
+    .row.off{opacity:.7}
+    .num{font:600 12.5px/1 var(--mono);color:var(--teal)}
+    .info h2{font-size:22px;line-height:1.35;margin:8px 0 6px;font-weight:700}
+    .info p{color:var(--slate);font-size:15.5px}
+    .empty{max-width:560px;padding:40px;border:1px dashed var(--line);border-radius:20px;background:var(--cloud)}
+    .empty .badge{display:inline-block;font-size:13px;font-weight:600;padding:5px 12px;border-radius:999px;background:var(--sun);color:var(--navy)}
+    .empty h2{font-size:24px;margin:16px 0 8px;font-weight:700}
+    .empty p{color:var(--slate);margin-bottom:22px}
+    .back{margin-top:40px}
+    .back a{color:var(--teal);font-weight:600;text-decoration:none}
+    .back a:hover{text-decoration:underline}
+
+    @media (max-width:640px){
+        .row{grid-template-columns:1fr;gap:14px}
+        .info{padding:0 6px 8px}
+        .empty{padding:28px 22px}
+    }
+    @media (prefers-reduced-motion:reduce){
+        .row{transition:none}
+    }
+</style>

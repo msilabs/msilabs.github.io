@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Git Simulator",
+        "description": "ব্রাউজারে fake terminal আর commit graph। প্রতিটা command-এর বাংলা ব্যাখ্যা, ১১টা mission।",
+        "topic": "Git",
+        "color": "sun",
+        "icon": "🌿",
+        "meta": "১১টা mission",
+        "href": "https://msilabs.github.io/git-simulator/",
+        "github": "https://github.com/msilabs/git-simulator"
+    },
+    {
+        "name": "Scaling Simulator",
+        "description": "Load balancer, cache, replica আর autoscaling নিজের হাতে বসিয়ে দেখুন, traffic বাড়লে সার্ভার কেমন আচরণ করে।",
+        "topic": "System design",
+        "color": "indigo",
+        "icon": "📈",
+        "meta": "৬টা চ্যালেঞ্জ",
+        "href": "https://msilabs.github.io/scaling-simulator/",
+        "github": "https://github.com/msilabs/scaling-simulator"
+    },
+    {
+        "name": "চিহ্ন টাইপিং",
+        "description": "১৪টা ভাষার আসল কোড টাইপ করার খেলা। ব্র্যাকেট, সেমিকোলন আর চিহ্নে হাত পাকান।",
+        "topic": "টাইপিং",
+        "color": "mint",
+        "icon": "⌨️",
+        "meta": "১৪টা ভাষা",
+        "href": "https://msilabs.github.io/code-typing-practice/",
+        "github": "https://github.com/msilabs/code-typing-practice"
+    }
+]

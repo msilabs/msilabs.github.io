@@ -1,0 +1,14 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<template>
+    <div class="learn" lang="bn"><slot /></div>
+</template>
+
+<style global>
+    .learn{--sans-bn:'Inter','Hind Siliguri','Noto Sans Bengali',system-ui,sans-serif;font-family:var(--sans-bn)}
+    .learn h1,.learn h2,.learn h3{letter-spacing:-.01em}
+    .learn .btn{font-family:var(--sans-bn)}
+    .learn [hidden]{display:none !important}
+</style>

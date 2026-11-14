@@ -84,12 +84,12 @@ Alo-র যেসব সীমা মাথায় রাখতে হবে:
 - [x] `components/Tools.alo`, `id="tools"`। কার্ড: CVবানাও, প্রজেক্ট হেলথ ("Built with Alo" badge), Poster maker। প্রতিটায় Open আর GitHub লিংক।
 
 ### M4: `/learn/`-এর কাঠামো
-- [ ] `pages/learn/layout.alo`: ভেতরে `<div lang="bn"><slot /></div>`
-- [ ] `data/courses.json`: course (`id`, `title`, `description`, `topic`, `color`, `icon`, `lessons[]`) আর পাঠ (`slug`, `title`, `duration`, `status`: `"soon"` ঐচ্ছিক, `thumb` ঐচ্ছিক)। Interactive কার্ডের জন্য আলাদা `data/interactive.json`।
-- [ ] `pages/learn/page.alo`: শিরোনাম, topic chip-এর ফিল্টার (ছোট `<script>`), course grid আর Interactive grid
-- [ ] `components/learn/CourseCard.alo`, `components/learn/Cover.alo` (thumbnail), `components/learn/Course.alo` (course পেইজের পুরো ভিউ, `id` prop নেয়)
-- [ ] `pages/learn/web/page.alo` আর `pages/learn/laravel/page.alo`: প্রতিটা ৩–৪ লাইন, `<Learn.Course id="…" />`
-- [ ] শুরুর course দুটো: "ওয়েব কীভাবে চলে" (`web`, HTTPS পাঠ) আর "Laravel for Beginners" (`laravel`, শীঘ্রই)। কোনো বানানো পাঠ রাখবেন না।
+- [x] `pages/learn/layout.alo`: ভেতরে `<div lang="bn"><slot /></div>`
+- [x] `data/courses.json`: course (`id`, `title`, `description`, `topic`, `color`, `icon`, `lessons[]`) আর পাঠ (`slug`, `title`, `duration`, `status`: `"soon"` ঐচ্ছিক, `thumb` ঐচ্ছিক)। Interactive কার্ডের জন্য আলাদা `data/interactive.json`।
+- [x] `pages/learn/page.alo`: শিরোনাম, topic chip-এর ফিল্টার (ছোট `<script>`), course grid আর Interactive grid
+- [x] `components/learn/CourseCard.alo`, `components/learn/Cover.alo` (thumbnail), `components/learn/Course.alo` (course পেইজের পুরো ভিউ, `id` prop নেয়)
+- [x] `pages/learn/web/page.alo` আর `pages/learn/laravel/page.alo`: প্রতিটা ৩–৪ লাইন, `<Learn.Course id="…" />`
+- [x] শুরুর course দুটো: "ওয়েব কীভাবে চলে" (`web`, HTTPS পাঠ) আর "Laravel for Beginners" (`laravel`, শীঘ্রই)। কোনো বানানো পাঠ রাখবেন না।
 
 ### M5: HTTPS পাঠ আনা
 - [ ] উপরের টেবিল অনুযায়ী ফাইলগুলো আনুন আর component-এর নাম বদলান
