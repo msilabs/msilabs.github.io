@@ -75,9 +75,9 @@ Alo-র যেসব সীমা মাথায় রাখতে হবে:
 - [x] `components/Footer.alo`: Marketplace লিংক যোগ, আর Alo-র credit যাবে Docs-এ
 
 ### M2: Framework section
-- [ ] Alo অংশে hint: `--template docs` (সাথে `portfolio`, `landing`, `blank`)
-- [ ] VS Code strip: Alo আর Adhar-এর নিচে চওড়া কার্ড। থাকবে বর্ণনা (highlighting, suggestions, Alo-র error আর quick fix, dev server), `<Command>` দিয়ে install command, আর Marketplace ও GitHub লিংক।
-- [ ] "Built with Alo" লাইন: এই সাইট · প্রজেক্ট হেলথ · Alo docs · Adhar docs
+- [x] Alo অংশে hint: `--template docs` (সাথে `portfolio`, `landing`, `blank`)
+- [x] VS Code strip: Alo আর Adhar-এর নিচে চওড়া কার্ড। থাকবে বর্ণনা (highlighting, suggestions, Alo-র error আর quick fix, dev server), `<Command>` দিয়ে install command, আর Marketplace ও GitHub লিংক।
+- [x] "Built with Alo" লাইন: এই সাইট · প্রজেক্ট হেলথ · Alo docs · Adhar docs
 
 ### M3: Tools section
 - [ ] `data/tools.json` (`packages.json`-এর ধাঁচে) আর `components/ToolCard.alo`

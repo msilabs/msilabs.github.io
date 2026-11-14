@@ -17,6 +17,7 @@
                         <span class="chip">Static output</span>
                     </div>
                     <Command command="npx @msilabs/alo init my-site" label="Copy Alo npx command" />
+                    <p class="hint">Add <code>--template docs</code> to start from a ready site, or pick <code>portfolio</code>, <code>landing</code> or <code>blank</code>.</p>
                     <div class="flinks">
                         <a href="https://msilabs.github.io/alo/" target="_blank" rel="noopener">Docs</a>
                         <a href="https://github.com/msilabs/alo" target="_blank" rel="noopener">GitHub</a>
@@ -67,6 +68,32 @@
                     </div>
                 </div>
             </div>
+
+            <div class="vsc rv">
+                <div class="vsc-text">
+                    <div class="vsc-top">
+                        <span class="vsc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m8 10 3 2-3 2M13 15h3"/></svg></span>
+                        <span class="vsc-kicker">VS Code extension</span>
+                    </div>
+                    <h3 class="vsc-name">Alo and Adhar, right in the editor.</h3>
+                    <p>Syntax highlighting for <code>.alo</code> files, suggestions for components, props and <code>data</code>, Alo's own errors with quick fixes, and a dev server one click away.</p>
+                </div>
+                <div class="vsc-side">
+                    <Command command="code --install-extension msilabs.alo-vscode" label="Copy VS Code install command" />
+                    <div class="flinks">
+                        <a href="{{ data.site.links.vscode }}" target="_blank" rel="noopener">Marketplace</a>
+                        <a href="https://github.com/msilabs/alo-vscode" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <p class="built rv">
+                <span>Built with Alo:</span>
+                <a href="/">this site</a>
+                <a href="https://msilabs.github.io/project-health-dashboard/" target="_blank" rel="noopener">Project Health</a>
+                <a href="{{ data.site.links.aloDocs }}" target="_blank" rel="noopener">Alo docs</a>
+                <a href="https://msilabs.github.io/adhar/" target="_blank" rel="noopener">Adhar docs</a>
+            </p>
         </div>
     </section>
 </template>
@@ -94,9 +121,30 @@
     .term-body .p{color:var(--mint)}
     .term-body .s{color:#FFD58A}
 
+    .vsc{margin-top:80px;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:36px 40px;border-radius:20px;background:var(--navy);color:#fff}
+    .vsc-top{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+    .vsc-ic{width:40px;height:40px;border-radius:11px;background:rgba(30,214,168,.16);color:var(--mint);display:grid;place-items:center}
+    .vsc-ic svg{width:22px;height:22px}
+    .vsc-kicker{font:600 13px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--mint)}
+    .vsc-name{font-size:clamp(22px,2.6vw,28px);line-height:1.2;letter-spacing:-.02em;font-weight:800;margin:0 0 10px}
+    .vsc p{color:#B8C4DC;font-size:16.5px}
+    .vsc code{font-family:var(--mono);font-size:.9em;color:#FFD58A}
+    .vsc .flinks a{color:var(--mint)}
+    .vsc .flinks a:hover{border-color:var(--mint)}
+
+    .built{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;margin-top:36px;font-size:15px;color:var(--slate)}
+    .built span{font-weight:600;color:var(--navy)}
+    .built a{color:var(--teal);font-weight:600;text-decoration:none;border-bottom:2px solid transparent}
+    .built a:hover{border-color:var(--teal)}
+
     @media (max-width:960px){
+        .vsc{grid-template-columns:1fr;gap:24px;padding:28px 24px;margin-top:64px}
         .framework,.framework.rev{grid-template-columns:1fr;gap:44px}
         .framework.rev .term{order:0}
         .framework + .framework{margin-top:56px}
     }
+</style>
+
+<style global>
+    .vsc .cmd{background:var(--navy-deep);border:1px solid rgba(255,255,255,.08)}
 </style>
