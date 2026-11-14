@@ -1,30 +1,70 @@
 <template>
-    <section id="framework" aria-labelledby="alo-title">
-        <div class="wrap framework">
-            <div class="rv">
-                <div class="kicker">Framework</div>
-                <h2 id="alo-title">Alo, a small static site framework.</h2>
-                <p class="sub">Write plain HTML, CSS and JS in <code>.alo</code> files and get components, layouts, loops and conditions at build time. The result is a fully static site, with no config file, no imports and no runtime in the browser.</p>
-                <div class="chips">
-                    <span class="chip hl">Zero dependencies</span>
-                    <span class="chip">Node.js 22+</span>
-                    <span class="chip">Static output</span>
+    <section id="framework" aria-labelledby="fw-title">
+        <div class="wrap">
+            <div class="head rv">
+                <div class="kicker">Frameworks</div>
+                <h2 id="fw-title">Alo and Adhar, two small frameworks that fit together.</h2>
+                <p class="sub">One builds the static site, the other the JSON API behind it. Both are plain files in folders, with zero dependencies, and they can live in one project.</p>
+            </div>
+
+            <div class="framework">
+                <div class="rv">
+                    <h3 class="fw-name">Alo, a small static site framework.</h3>
+                    <p class="sub">Write plain HTML, CSS and JS in <code>.alo</code> files and get components, layouts, loops and conditions at build time. The result is a fully static site, with no config file, no imports and no runtime in the browser.</p>
+                    <div class="chips">
+                        <span class="chip hl">Zero dependencies</span>
+                        <span class="chip">Node.js 22+</span>
+                        <span class="chip">Static output</span>
+                    </div>
+                    <Command command="npx @msilabs/alo init my-site" label="Copy Alo npx command" />
+                    <div class="flinks">
+                        <a href="https://msilabs.github.io/alo/" target="_blank" rel="noopener">Docs</a>
+                        <a href="https://github.com/msilabs/alo" target="_blank" rel="noopener">GitHub</a>
+                        <a href="https://www.npmjs.com/package/@msilabs/alo" target="_blank" rel="noopener">npm</a>
+                    </div>
                 </div>
-                <Command command="npx @msilabs/alo init my-site" label="Copy npx command" />
-                <div class="flinks">
-                    <a href="https://github.com/msilabs/alo" target="_blank" rel="noopener">GitHub</a>
+
+                <div class="term rv" aria-hidden="true">
+                    <div class="term-bar"><i></i><i></i><i></i><span>my-site</span></div>
+                    <div class="term-body">
+                        <span class="c"># folders are routes, files are components</span><br>
+                        pages/page.alo <span class="c">→ /</span><br>
+                        pages/about/page.alo <span class="c">→ /about/</span><br>
+                        components/Card.alo <span class="c">→</span> <span class="s">&lt;Card /&gt;</span><br>
+                        data/team.json <span class="c">→ data.team</span><br>
+                        <span class="p">$</span> node alo build
+                    </div>
                 </div>
             </div>
 
-            <div class="term rv" aria-hidden="true">
-                <div class="term-bar"><i></i><i></i><i></i><span>my-site</span></div>
-                <div class="term-body">
-                    <span class="c"># folders are routes, files are components</span><br>
-                    pages/page.alo <span class="c">→ /</span><br>
-                    pages/about/page.alo <span class="c">→ /about/</span><br>
-                    components/Card.alo <span class="c">→</span> <span class="s">&lt;Card /&gt;</span><br>
-                    data/team.json <span class="c">→ data.team</span><br>
-                    <span class="p">$</span> node alo build
+            <div class="framework rev">
+                <div class="rv">
+                    <h3 class="fw-name">Adhar, a small backend API framework.</h3>
+                    <p class="sub">Write plain JS functions in folders and get a JSON API: routing, middleware, validation, services and a built-in SQLite database. Add an Alo site in a <code>web/</code> folder and both run on one port, in one project.</p>
+                    <div class="chips">
+                        <span class="chip hl">Zero dependencies</span>
+                        <span class="chip">Node.js 22.13+</span>
+                        <span class="chip">SQLite built in</span>
+                    </div>
+                    <Command command="npx @msilabs/adhar init my-api" label="Copy Adhar npx command" />
+                    <p class="hint">Add <code>--web</code> to start with an Alo site in the same project.</p>
+                    <div class="flinks">
+                        <a href="https://msilabs.github.io/adhar/" target="_blank" rel="noopener">Docs</a>
+                        <a href="https://github.com/msilabs/adhar" target="_blank" rel="noopener">GitHub</a>
+                        <a href="https://www.npmjs.com/package/@msilabs/adhar" target="_blank" rel="noopener">npm</a>
+                    </div>
+                </div>
+
+                <div class="term rv" aria-hidden="true">
+                    <div class="term-bar"><i></i><i></i><i></i><span>my-api</span></div>
+                    <div class="term-body">
+                        <span class="c"># folders are URLs, functions are handlers</span><br>
+                        api/route.js <span class="c">→ /api</span><br>
+                        api/notes/route.js <span class="c">→ /api/notes</span><br>
+                        api/notes/[id]/route.js <span class="c">→ /api/notes/:id</span><br>
+                        services/notes.js <span class="c">→ ctx.services.notes</span><br>
+                        <span class="p">$</span> node adhar dev
+                    </div>
                 </div>
             </div>
         </div>
@@ -33,8 +73,13 @@
 
 <style>
     .framework{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+    .framework + .framework{margin-top:72px}
+    .framework.rev{grid-template-columns:.9fr 1.1fr}
+    .framework.rev .term{order:-1}
     .framework code{font-family:var(--mono);font-size:.92em}
+    .fw-name{font-size:clamp(24px,3vw,32px);line-height:1.15;letter-spacing:-.02em;font-weight:800;margin:0 0 14px}
     .framework .chips{margin-top:24px}
+    .hint{margin-top:12px;font-size:14.5px;color:var(--slate)}
     .flinks{display:flex;gap:18px;margin-top:20px;font-size:15px;font-weight:600}
     .flinks a{color:var(--teal);text-decoration:none;border-bottom:2px solid transparent}
     .flinks a:hover{border-color:var(--teal)}
@@ -50,6 +95,8 @@
     .term-body .s{color:#FFD58A}
 
     @media (max-width:960px){
-        .framework{grid-template-columns:1fr;gap:44px}
+        .framework,.framework.rev{grid-template-columns:1fr;gap:44px}
+        .framework.rev .term{order:0}
+        .framework + .framework{margin-top:56px}
     }
 </style>
