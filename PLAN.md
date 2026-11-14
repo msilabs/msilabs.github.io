@@ -92,11 +92,11 @@ Alo-র যেসব সীমা মাথায় রাখতে হবে:
 - [x] শুরুর course দুটো: "ওয়েব কীভাবে চলে" (`web`, HTTPS পাঠ) আর "Laravel for Beginners" (`laravel`, শীঘ্রই)। কোনো বানানো পাঠ রাখবেন না।
 
 ### M5: HTTPS পাঠ আনা
-- [ ] উপরের টেবিল অনুযায়ী ফাইলগুলো আনুন আর component-এর নাম বদলান
-- [ ] অডিওর পাথ হবে `/audio/https.mp3`
-- [ ] থিম msilabs-এর token-এ বদলান
-- [ ] `pages/learn/web/https/page.alo`: breadcrumb, `<Learn.Player>` আর `<Scenes.Https />`, স্ক্রিপ্ট খোলা-বন্ধ, আর `courses.json` থেকে আগের ও পরের পাঠের লিংক
-- [ ] পাঠের নিজস্ব `title`, `description` আর `og:*`
+- [x] উপরের টেবিল অনুযায়ী ফাইলগুলো আনুন আর component-এর নাম বদলান
+- [x] অডিওর পাথ হবে `/audio/https.mp3`
+- [x] থিম msilabs-এর token-এ বদলান
+- [x] `pages/learn/web/https/page.alo`: breadcrumb, `<Learn.Player>` আর `<Scenes.Https />`, স্ক্রিপ্ট খোলা-বন্ধ, আর `courses.json` থেকে আগের ও পরের পাঠের লিংক
+- [x] পাঠের নিজস্ব `title`, `description` আর `og:*`
 
 ### M6: হোমপেইজ নতুন করে সাজানো
 - [ ] `components/Learn.alo` হবে teaser: সর্বশেষ পাঠের কার্ড, simulator, Laravel সিরিজ (শীঘ্রই), আর "সব দেখুন → /learn/"
@@ -112,8 +112,8 @@ Alo-র যেসব সীমা মাথায় রাখতে হবে:
 
 ## নতুন পাঠ যোগ করার নিয়ম
 
-1. `data/timelines/<slug>.json`: ক্যাপশন আর সময়ের টাইমলাইন
+1. `data/timelines/<slug>.json`: ক্যাপশন আর সময়ের টাইমলাইন (`slug` লিখবেন না, ফাইলের নাম থেকে আসে)
 2. `components/scenes/<Name>.alo`: দৃশ্য
 3. `public/audio/<slug>.mp3`: ধারাবর্ণনা
-4. `pages/learn/<course>/<slug>/page.alo`: `<Learn.Player>` আর `<Scenes.Name />`
+4. `pages/learn/<course>/<slug>/page.alo`: `<Learn.Lesson course="…" slug="…">`-এর ভেতরে `<Learn.Player>` আর `<Scenes.Name />` (নমুনা: `pages/learn/web/https/page.alo`)। breadcrumb, স্ক্রিপ্ট আর আগের/পরের পাঠ `<Learn.Lesson>` নিজেই বসায়।
 5. `data/courses.json`: সেই course-এর `lessons`-এ এক লাইন

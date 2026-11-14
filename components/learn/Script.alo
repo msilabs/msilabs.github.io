@@ -1,0 +1,22 @@
+<!-- অডিও স্ক্রিপ্ট: ক্যাপশনের একই তালিকা থেকে তৈরি, তাই দুটো সবসময় হুবহু এক -->
+<template>
+    <details class="script">
+        <summary>অডিও স্ক্রিপ্ট</summary>
+        <div class="lines">
+            <template for="c in props.captions">
+                <p>{{ c.text }}</p>
+            </template>
+        </div>
+    </details>
+</template>
+
+<style>
+    .script{margin-top:28px;border:1px solid var(--line);border-radius:14px;background:#fff}
+    summary{padding:16px 22px;font-weight:600;font-size:16.5px;cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px}
+    summary::-webkit-details-marker{display:none}
+    summary::before{content:"";width:8px;height:8px;border-right:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg);transition:transform .2s}
+    .script[open] summary::before{transform:rotate(45deg)}
+    .lines{padding:0 22px 20px}
+    p{margin-bottom:12px;font-size:16px;max-width:65ch}
+    p:last-child{margin-bottom:0}
+</style>

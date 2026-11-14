@@ -1,0 +1,20 @@
+<head>
+    <title>HTTPS কীভাবে কাজ করে | ওয়েব কীভাবে চলে | msilabs</title>
+    <meta name="description" content="{{ data.courses.find((c) => c.id === 'web').lessons.find((l) => l.slug === 'https').description }}">
+    <link rel="canonical" href="{{ data.site.url }}/learn/web/https/">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ data.site.url }}/learn/web/https/">
+    <meta property="og:title" content="HTTPS কীভাবে কাজ করে | msilabs">
+    <meta property="og:description" content="{{ data.courses.find((c) => c.id === 'web').lessons.find((l) => l.slug === 'https').description }}">
+    <meta property="og:image" content="{{ data.site.url }}/og.png">
+    <meta property="og:locale" content="bn_BD">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<template>
+    <Learn.Lesson course="web" slug="https">
+        <Learn.Player timeline="{{ data.timelines.find((t) => t.slug === 'https') }}">
+            <Scenes.Https timeline="{{ data.timelines.find((t) => t.slug === 'https') }}" />
+        </Learn.Player>
+    </Learn.Lesson>
+</template>

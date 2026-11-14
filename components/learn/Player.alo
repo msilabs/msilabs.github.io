@@ -1,0 +1,259 @@
+<!-- প্লেয়ার: অডিওর সময় দেখে ভেতরের সব [data-at] এলিমেন্ট দেখায় আর লুকায়।
+     দৃশ্যটা আসে <slot />-এ; ক্যাপশন আসে props.timeline.captions থেকে। -->
+<template>
+    <div class="player" data-duration="{{ props.timeline.duration }}">
+        <div class="stage">
+            <slot />
+            <template for="(c, i) in props.timeline.captions">
+                <p class="cap" data-at="{{ c.t }}" data-until="{{ props.timeline.captions[i + 1]?.t }}">{{ c.text }}</p>
+            </template>
+        </div>
+
+        <audio src="{{ props.timeline.audio }}" preload="none"></audio>
+
+        <div class="controls">
+            <button class="play" type="button">▶ চালু</button>
+            <input class="seek" type="range" min="0" max="{{ props.timeline.duration }}" step="0.1" value="0" aria-label="সময়">
+            <span class="time"></span>
+            <select class="rate" aria-label="গতি">
+                <option value="0.5">0.5x</option>
+                <option value="1" selected>1x</option>
+                <option value="1.5">1.5x</option>
+                <option value="2">2x</option>
+            </select>
+            <button class="theme" type="button">থিম</button>
+        </div>
+    </div>
+</template>
+
+<style>
+    /* msilabs-এর রং: লাইট আর ডার্ক থিম, শুধু প্লেয়ারের ভেতরে */
+    .player {
+        --stage: #ffffff;
+        --ink: var(--navy);
+        --muted: var(--slate);
+        --line: #d5dce8;
+        --accent: var(--teal);
+        --danger: #d93f2b;
+        --ok: var(--teal);
+        --chip: var(--cloud);
+        color: var(--ink);
+    }
+
+    .player.night {
+        --stage: var(--navy);
+        --ink: #eef2fa;
+        --muted: #9aa8c4;
+        --line: #2b3e60;
+        --accent: var(--mint);
+        --danger: #ff7b6b;
+        --ok: var(--mint);
+        --chip: var(--navy-soft);
+    }
+
+    /* "ভিডিও" পর্দা: আসলে একটা সাধারণ div */
+    .stage {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background: var(--stage);
+        border: 1px solid var(--line);
+        border-radius: 14px 14px 0 0;
+        container-type: inline-size;
+        cursor: pointer;
+    }
+
+    .cap {
+        position: absolute;
+        left: 5%;
+        right: 5%;
+        bottom: 4%;
+        text-align: center;
+        font-size: 2.05cqw;
+        font-weight: 500;
+        padding: 0.7cqw 1.2cqw;
+        border-radius: 0.8cqw;
+        background: var(--chip);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .cap.on {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .controls {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 12px;
+        background: var(--stage);
+        border: 1px solid var(--line);
+        border-top: 0;
+        border-radius: 0 0 14px 14px;
+    }
+
+    button,
+    select {
+        font-family: inherit;
+        font-size: 14px;
+        color: var(--ink);
+        background: var(--chip);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 6px 10px;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+    .play {
+        min-width: 76px;
+        font-weight: 700;
+    }
+
+    .seek {
+        flex: 1;
+        min-width: 60px;
+        accent-color: var(--accent);
+    }
+
+    .time {
+        font-size: 13px;
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+    }
+
+    @media (max-width: 560px) {
+        .time {
+            display: none;
+        }
+    }
+</style>
+
+<script>
+    const audio = $el.querySelector('audio');
+    const stage = $el.querySelector('.stage');
+    const playBtn = $el.querySelector('.play');
+    const seek = $el.querySelector('.seek');
+    const timeEl = $el.querySelector('.time');
+    let duration = Number($el.dataset.duration);
+
+    // পর্দার সব সময়-বাঁধা এলিমেন্ট (দৃশ্য আর ক্যাপশন দুটোই)
+    const cues = [...stage.querySelectorAll('[data-at]')].map((el) => ({
+        el,
+        at: Number(el.dataset.at),
+        until: el.dataset.until ? Number(el.dataset.until) : Infinity,
+    }));
+
+    // ঘড়ি: অডিওই সময় ঠিক করে। অডিও লোড না হলে একটা ভার্চুয়াল ঘড়ি দিয়ে অ্যানিমেশন চলে।
+    let useAudio = true;
+    const fallback = { time: 0, playing: false, rate: 1 };
+    audio.addEventListener('error', () => {
+        useAudio = false;
+    });
+    audio.addEventListener('loadedmetadata', () => {
+        if (isFinite(audio.duration)) {
+            duration = audio.duration;
+            seek.max = duration;
+        }
+    });
+
+    // অডিওটা একবারে পুরো নামিয়ে blob হিসেবে বসানো হয়। এতে যে সার্ভার Range রিকোয়েস্ট
+    // সমর্থন করে না (যেমন `node alo dev`), সেখানেও টেনে আগে-পিছে করা যায়।
+    fetch(audio.src)
+        .then((res) => (res.ok ? res.blob() : Promise.reject(res.status)))
+        .then((blob) => {
+            audio.src = URL.createObjectURL(new Blob([blob], { type: 'audio/mpeg' }));
+        })
+        .catch(() => {
+            audio.preload = 'auto';
+            audio.load();
+        });
+
+    const clock = {
+        get time() {
+            return useAudio ? audio.currentTime : fallback.time;
+        },
+        set time(v) {
+            if (useAudio) audio.currentTime = v;
+            else fallback.time = v;
+        },
+        get playing() {
+            return useAudio ? !audio.paused && !audio.ended : fallback.playing;
+        },
+        get ended() {
+            return useAudio ? audio.ended : fallback.time >= duration;
+        },
+    };
+
+    const fmt = (s) => Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0');
+
+    // সময় t-তে পর্দায় কী কী থাকার কথা, সেটা হিসাব করে দেখানো
+    let seeking = false;
+    function render() {
+        const t = clock.time;
+        for (const c of cues) c.el.classList.toggle('on', t >= c.at && t < c.until);
+        if (!seeking) seek.value = t;
+        timeEl.textContent = fmt(t) + ' / ' + fmt(duration);
+        playBtn.textContent = clock.playing ? '⏸ থামান' : clock.ended ? '↺ আবার' : '▶ চালু';
+    }
+
+    let last = performance.now();
+    function frame(now) {
+        if (!useAudio && fallback.playing) {
+            fallback.time += ((now - last) / 1000) * fallback.rate;
+            if (fallback.time >= duration) {
+                fallback.time = duration;
+                fallback.playing = false;
+            }
+        }
+        last = now;
+        render();
+        requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+
+    function toggle() {
+        if (!useAudio) {
+            if (!fallback.playing && fallback.time >= duration) fallback.time = 0;
+            fallback.playing = !fallback.playing;
+            return;
+        }
+        if (audio.paused || audio.ended) {
+            if (audio.ended) audio.currentTime = 0;
+            audio.play().catch(() => {});
+        } else {
+            audio.pause();
+        }
+    }
+
+    playBtn.addEventListener('click', toggle);
+    stage.addEventListener('click', () => {
+        if (String(getSelection())) return; // লেখা সিলেক্ট করার সময় যেন থেমে না যায়
+        toggle();
+    });
+    seek.addEventListener('input', () => {
+        seeking = true;
+        clock.time = Number(seek.value);
+    });
+    seek.addEventListener('change', () => {
+        seeking = false;
+    });
+    $el.querySelector('.rate').addEventListener('change', (e) => {
+        audio.playbackRate = Number(e.target.value);
+        fallback.rate = Number(e.target.value);
+    });
+    if (matchMedia('(prefers-color-scheme: dark)').matches) $el.classList.add('night');
+    $el.querySelector('.theme').addEventListener('click', () => {
+        $el.classList.toggle('night');
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.code === 'Space' && !['BUTTON', 'SELECT', 'INPUT'].includes(e.target.tagName)) {
+            e.preventDefault();
+            toggle();
+        }
+    });
+</script>
