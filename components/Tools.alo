@@ -1,0 +1,25 @@
+<template>
+    <section id="tools" aria-labelledby="tools-title">
+        <div class="wrap">
+            <div class="head rv">
+                <div class="kicker">Tools</div>
+                <h2 id="tools-title">Small tools that run in your browser.</h2>
+                <p class="sub">No login, no server, no cost. Open the page and start using it.</p>
+            </div>
+
+            <div class="tools">
+                <template for="tool in data.tools">
+                    <ToolCard tool="{{ tool }}" />
+                </template>
+            </div>
+        </div>
+    </section>
+</template>
+
+<style>
+    .tools{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+
+    @media (max-width:960px){
+        .tools{grid-template-columns:1fr}
+    }
+</style>

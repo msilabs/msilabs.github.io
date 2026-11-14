@@ -80,8 +80,8 @@ Alo-র যেসব সীমা মাথায় রাখতে হবে:
 - [x] "Built with Alo" লাইন: এই সাইট · প্রজেক্ট হেলথ · Alo docs · Adhar docs
 
 ### M3: Tools section
-- [ ] `data/tools.json` (`packages.json`-এর ধাঁচে) আর `components/ToolCard.alo`
-- [ ] `components/Tools.alo`, `id="tools"`। কার্ড: CVবানাও, প্রজেক্ট হেলথ ("Built with Alo" badge), Poster maker। প্রতিটায় Open আর GitHub লিংক।
+- [x] `data/tools.json` (`packages.json`-এর ধাঁচে) আর `components/ToolCard.alo`
+- [x] `components/Tools.alo`, `id="tools"`। কার্ড: CVবানাও, প্রজেক্ট হেলথ ("Built with Alo" badge), Poster maker। প্রতিটায় Open আর GitHub লিংক।
 
 ### M4: `/learn/`-এর কাঠামো
 - [ ] `pages/learn/layout.alo`: ভেতরে `<div lang="bn"><slot /></div>`
