@@ -87,6 +87,25 @@
                 </div>
             </div>
 
+            <div class="vsc rv">
+                <div class="vsc-text">
+                    <div class="vsc-top">
+                        <span class="vsc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg></span>
+                        <span class="vsc-kicker">VS Code theme</span>
+                    </div>
+                    <h3 class="vsc-name">Four themes that are easy on the eyes.</h3>
+                    <p>Navy, mint and an amber cursor. Dark, Light, Notebook and Warm Night, made for long hours of reading and writing code.</p>
+                </div>
+                <div class="vsc-side">
+                    <Command command="code --install-extension msilabs.msilabs-theme" label="Copy VS Code theme install command" />
+                    <div class="flinks">
+                        <a href="https://msilabs.github.io/msilabs-theme/" target="_blank" rel="noopener">Preview</a>
+                        <a href="https://marketplace.visualstudio.com/items?itemName=msilabs.msilabs-theme" target="_blank" rel="noopener">Marketplace</a>
+                        <a href="https://github.com/msilabs/msilabs-theme" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
             <p class="built rv">
                 <span>Built with Alo:</span>
                 <a href="/">this site</a>
@@ -122,6 +141,7 @@
     .term-body .s{color:#FFD58A}
 
     .vsc{margin-top:80px;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:36px 40px;border-radius:20px;background:var(--navy);color:#fff}
+    .vsc + .vsc{margin-top:24px}
     .vsc-top{display:flex;align-items:center;gap:12px;margin-bottom:16px}
     .vsc-ic{width:40px;height:40px;border-radius:11px;background:rgba(30,214,168,.16);color:var(--mint);display:grid;place-items:center}
     .vsc-ic svg{width:22px;height:22px}
