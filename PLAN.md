@@ -26,7 +26,7 @@
 | --- | --- |
 | Alo | `@msilabs/alo` 1.2.0। `init --template blank\|portfolio\|docs\|landing`। Docs: https://msilabs.github.io/alo/ |
 | Adhar | `@msilabs/adhar` 1.2.0। `init my-api --web` দিলে full stack। Docs: https://msilabs.github.io/adhar/ |
-| VS Code | `msilabs.alo-vscode`। install: `code --install-extension msilabs.alo-vscode`। https://marketplace.visualstudio.com/items?itemName=msilabs.alo-vscode, GitHub: https://github.com/msilabs/alo-vscode |
+| VS Code | `msilabs.alo-vscode`। install: `code --install-extension msilabs.alo-vscode`। https://marketplace.visualstudio.com/items?itemName=msilabs.alo-vscode, Open VSX: https://open-vsx.org/extension/msilabs/alo-vscode, GitHub: https://github.com/msilabs/alo-vscode |
 | npm org | https://www.npmjs.com/org/msilabs |
 | Alo dependency | `package.json`-এ `^1.2.0` (M1-এ আপডেট করা) |
 

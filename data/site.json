@@ -16,6 +16,7 @@
         "packagist": "https://packagist.org/packages/msilabs/bkash",
         "npm": "https://www.npmjs.com/org/msilabs",
         "vscode": "https://marketplace.visualstudio.com/items?itemName=msilabs.alo-vscode",
+        "openVsx": "https://open-vsx.org/extension/msilabs/alo-vscode",
         "aloDocs": "https://msilabs.github.io/alo/",
         "portfolio": "https://msisaif.github.io"
     }
