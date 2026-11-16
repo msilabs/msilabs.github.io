@@ -20,13 +20,13 @@
         "github": "https://github.com/msilabs/scaling-simulator"
     },
     {
-        "name": "চিহ্ন টাইপিং",
+        "name": "কোড টাইপিং",
         "description": "১৪টা ভাষার আসল কোড টাইপ করার খেলা। ব্র্যাকেট, সেমিকোলন আর চিহ্নে হাত পাকান।",
         "topic": "টাইপিং",
         "color": "mint",
         "icon": "⌨️",
         "meta": "১৪টা ভাষা",
-        "href": "https://msilabs.github.io/code-typing-practice/",
-        "github": "https://github.com/msilabs/code-typing-practice"
+        "href": "https://msilabs.github.io/code-typing/",
+        "github": "https://github.com/msilabs/code-typing"
     }
 ]
