@@ -64,5 +64,26 @@
                 "href": "https://github.com/msilabs/project-health-dashboard"
             }
         ]
+    },
+    {
+        "accent": "qr",
+        "tag": "QR · Wi-Fi · Logo",
+        "name": "QR Code Generator",
+        "description": "Make a QR code for a link, Wi-Fi login, email, phone call or SMS. It updates as you type, and you can put your logo in the middle.",
+        "features": [
+            "Colors, dot styles and your own logo",
+            "PNG up to 2048 px, print-ready SVG or copy",
+            "Wi-Fi passwords are never saved"
+        ],
+        "links": [
+            {
+                "label": "Open",
+                "href": "https://msilabs.github.io/qr-code-generator/"
+            },
+            {
+                "label": "GitHub",
+                "href": "https://github.com/msilabs/qr-code-generator"
+            }
+        ]
     }
 ]

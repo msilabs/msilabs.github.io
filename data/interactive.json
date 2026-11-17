@@ -10,6 +10,26 @@
         "github": "https://github.com/msilabs/git-simulator"
     },
     {
+        "name": "SQL Playground",
+        "description": "ব্রাউজারে আসল SQLite। প্রতিটা query-র বাংলা ব্যাখ্যা, ধাপে ধাপে table আর JOIN-এর ছবি।",
+        "topic": "SQL",
+        "color": "sky",
+        "icon": "🗄️",
+        "meta": "১১টা মিশন",
+        "href": "https://msilabs.github.io/sql-playground/",
+        "github": "https://github.com/msilabs/sql-playground"
+    },
+    {
+        "name": "Regex Lab",
+        "description": "বাংলাদেশি ফোন, NID আর টাকার তৈরি pattern, প্রতিটা টুকরোর বাংলা ব্যাখ্যা, পাঠ আর challenge।",
+        "topic": "Regex",
+        "color": "coral",
+        "icon": "🔍",
+        "meta": "১৬টা পাঠ",
+        "href": "https://msilabs.github.io/regex-lab/",
+        "github": "https://github.com/msilabs/regex-lab"
+    },
+    {
         "name": "Scaling Simulator",
         "description": "Load balancer, cache, replica আর autoscaling নিজের হাতে বসিয়ে দেখুন, traffic বাড়লে সার্ভার কেমন আচরণ করে।",
         "topic": "System design",

@@ -14,10 +14,10 @@
 
 - সাইটের পরিচয় বড় হবে: bKash প্যাকেজ, frameworks, tools আর lessons। পেইজের কাঠামো মোটামুটি একই থাকবে।
 - VS Code এক্সটেনশনের জন্য আলাদা section হবে না। এটা Framework section-এর ভেতরে একটা চওড়া কার্ড (strip) হিসেবে থাকবে।
-- Tools section-এ থাকবে CVবানাও, Code Poster আর প্রজেক্ট হেলথ। QR code generator বাদ।
-- Simulator-গুলো (Git, Scaling, কোড টাইপিং) থাকবে হোমপেইজের Learn section-এ।
-- **২০২৬-১১-১৪-এ বদলেছে:** পাঠগুলো এই সাইটে নয়, আলাদা repo `msilabs/learn`-এ (local: `../msilabs-learn/`)। GitHub project Pages হিসেবে ওটা চলে `msilabs.github.io/learn/` ঠিকানায়, তাই এই সাইটের nav-এর `/learn/` লিংক ওখানেই যায়। এই সাইটে `pages/learn/` ফোল্ডার রাখা যাবে না।
-- পাঠ, player আর scene-এর সব নিয়ম আছে `../msilabs-learn/README.md`-এ। msisaif.github.io-তে থাকবে শুধু লিংক।
+- Tools section-এ থাকবে CVবানাও, Code Poster, প্রজেক্ট হেলথ আর QR Code Generator (২০২৬-১১-১৭-এ যোগ, নতুন করে বানানোর পরে)। চারটা কার্ড, তাই গ্রিড ২ কলামের।
+- Simulator-গুলো (Git, SQL Playground, Regex Lab, Scaling, কোড টাইপিং) থাকবে হোমপেইজের Learn section-এ।
+- **২০২৬-১১-১৪-এ বদলেছে:** পাঠগুলো এই সাইটে নয়, আলাদা repo `msilabs/learn`-এ (local: `../learn/`)। GitHub project Pages হিসেবে ওটা চলে `msilabs.github.io/learn/` ঠিকানায়, তাই এই সাইটের nav-এর `/learn/` লিংক ওখানেই যায়। এই সাইটে `pages/learn/` ফোল্ডার রাখা যাবে না।
+- পাঠ, player আর scene-এর সব নিয়ম আছে `../learn/README.md`-এ। msisaif.github.io-তে থাকবে শুধু লিংক।
 - Nav: **Frameworks · Tools · Learn · About**। Story nav থেকে বাদ, section হিসেবে থাকবে।
 
 ## তথ্যসূত্র
@@ -30,7 +30,7 @@
 | npm org        | https://www.npmjs.com/org/msilabs                                                                                                                                                                                                                                |
 | Alo dependency | `package.json`-এ `^1.2.0` (M1-এ আপডেট করা)                                                                                                                                                                                                                       |
 
-Tools আর simulator (সবগুলো চালু আছে, যাচাই করা হয়েছে; local ফোল্ডার `/Users/msi/msilabs/projects/`):
+Tools আর simulator (সবগুলো চালু আছে, যাচাই করা হয়েছে; local ফোল্ডার `/Users/msi/msilabs/apps/`):
 
 | নাম               | লিংক                                                | এক লাইনে                                                                                 |
 | ----------------- | --------------------------------------------------- | ---------------------------------------------------------------------------------------- |
@@ -40,6 +40,9 @@ Tools আর simulator (সবগুলো চালু আছে, যাচা�
 | Git Simulator     | https://msilabs.github.io/git-simulator/            | ব্রাউজারে fake terminal, commit graph আর বাংলা ব্যাখ্যা, ১১টা mission                    |
 | Scaling Simulator | https://msilabs.github.io/scaling-simulator/        | Load balancer, cache, replica আর autoscaling, ৬টা চ্যালেঞ্জ                              |
 | কোড টাইপিং        | https://msilabs.github.io/code-typing/              | ১৪টা ভাষার আসল কোড টাইপ করার খেলা                                                        |
+| SQL Playground    | https://msilabs.github.io/sql-playground/           | ব্রাউজারে আসল SQLite, ধাপে ধাপে query আর JOIN-এর ছবি, বাংলা ব্যাখ্যা, ১১টা মিশন          |
+| Regex Lab         | https://msilabs.github.io/regex-lab/                | বাংলাদেশি pattern, বাংলা ব্যাখ্যা, ১৬টা পাঠ আর ১৫টা challenge। **Alo দিয়ে বানানো**       |
+| QR Code Generator | https://msilabs.github.io/qr-code-generator/        | লিংক, Wi-Fi, email, ফোন আর SMS-এর QR, লোগোসহ, PNG আর SVG। **Alo দিয়ে বানানো**          |
 
 প্রতিটার GitHub লিংক: `https://github.com/msilabs/<ফোল্ডারের নাম>`।
 
@@ -105,11 +108,11 @@ Alo-র যেসব সীমা মাথায় রাখতে হবে:
 
 ## M9: পাঠ আলাদা repo-তে সরানো
 
-- [x] `msilabs/learn` (`../msilabs-learn/`): dark premium ডিজাইন, generic player, data-driven scene, `--base /learn/` দিয়ে deploy
+- [x] `msilabs/learn` (`../learn/`): dark premium ডিজাইন, generic player, data-driven scene, `--base /learn/` দিয়ে deploy
 - [x] এই সাইট থেকে `pages/learn/`, `components/learn/`, `components/scenes/`, `data/courses.json`, `data/timelines/` আর `public/audio/` সরানো
 - [x] হোমের Learn section-এ শুধু simulator আর `/learn/`-এর লিংক
 - [ ] **ব্যবহারকারীর কাজ:** `msilabs/learn` repo-র Settings → Pages-এ Source হিসেবে "GitHub Actions" বেছে নেওয়া, তারপর `feat/learn-site` merge করা
 
 ## নতুন পাঠ যোগ করার নিয়ম
 
-দেখুন `../msilabs-learn/README.md`। নতুন পাঠ মানে একটা JSON আর একটা mp3, কোনো component লিখতে হয় না।
+দেখুন `../learn/README.md`। নতুন পাঠ মানে একটা JSON আর একটা mp3, কোনো component লিখতে হয় না।
