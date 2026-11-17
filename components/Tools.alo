@@ -17,7 +17,7 @@
 </template>
 
 <style>
-    .tools{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .tools{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 
     @media (max-width:960px){
         .tools{grid-template-columns:1fr}

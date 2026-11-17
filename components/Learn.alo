@@ -40,6 +40,8 @@
     .card.mint{--c:#0B7F6E}
     .card.sun{--c:#B7791F}
     .card.indigo{--c:#4F46E5}
+    .card.coral{--c:#C2412D}
+    .card.sky{--c:#0E7AB5}
     .art{position:relative;aspect-ratio:16/9;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#14213D,var(--c));overflow:hidden}
     .art::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 15%,rgba(255,255,255,.18),transparent 55%)}
     .icon{font-size:64px;line-height:1;filter:drop-shadow(0 6px 14px rgba(0,0,0,.25))}

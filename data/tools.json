@@ -11,8 +11,36 @@
             "No login, no server: your data stays in the browser"
         ],
         "links": [
-            { "label": "Open", "href": "https://msilabs.github.io/msilabs-cv-builder/" },
-            { "label": "GitHub", "href": "https://github.com/msilabs/msilabs-cv-builder" }
+            {
+                "label": "Open",
+                "href": "https://msilabs.github.io/msilabs-cv-builder/"
+            },
+            {
+                "label": "GitHub",
+                "href": "https://github.com/msilabs/msilabs-cv-builder"
+            }
+        ]
+    },
+    {
+        "accent": "poster",
+        "tag": "Code · Social posts",
+        "name": "Code Poster",
+        "description": "Paste a code snippet and make a poster for Facebook and LinkedIn, with a Bangla title and explanation you write. Everything runs in the browser.",
+        "features": [
+            "Square, portrait and wide sizes",
+            "Themes, accent colors, Bangla and code fonts",
+            "Several posters in tabs",
+            "Save as PNG or copy the image"
+        ],
+        "links": [
+            {
+                "label": "Open",
+                "href": "https://msilabs.github.io/code-poster/"
+            },
+            {
+                "label": "GitHub",
+                "href": "https://github.com/msilabs/code-poster"
+            }
         ]
     },
     {
@@ -20,7 +48,6 @@
         "tag": "Versions · End of life",
         "name": "প্রজেক্ট হেলথ",
         "nameLang": "bn",
-        "builtWithAlo": true,
         "description": "A dashboard for the frameworks and server software your projects run on, and when each version stops getting support.",
         "features": [
             "What to upgrade now, and what can wait",
@@ -28,23 +55,35 @@
             "Data lives in the browser, with JSON export and import"
         ],
         "links": [
-            { "label": "Open", "href": "https://msilabs.github.io/project-health-dashboard/" },
-            { "label": "GitHub", "href": "https://github.com/msilabs/project-health-dashboard" }
+            {
+                "label": "Open",
+                "href": "https://msilabs.github.io/project-health-dashboard/"
+            },
+            {
+                "label": "GitHub",
+                "href": "https://github.com/msilabs/project-health-dashboard"
+            }
         ]
     },
     {
-        "accent": "poster",
-        "tag": "Code · Social posts",
-        "name": "Poster maker",
-        "description": "Paste a code snippet and get a poster with a Bangla title and explanation, sized for Facebook and LinkedIn.",
+        "accent": "qr",
+        "tag": "QR · Wi-Fi · Logo",
+        "name": "QR Code Generator",
+        "description": "Make a QR code for a link, Wi-Fi login, email, phone call or SMS. It updates as you type, and you can put your logo in the middle.",
         "features": [
-            "Square, portrait and wide sizes",
-            "Themes, Bangla fonts and code colors",
-            "Save as PNG or copy the image"
+            "Colors, dot styles and your own logo",
+            "PNG up to 2048 px, print-ready SVG or copy",
+            "Wi-Fi passwords are never saved"
         ],
         "links": [
-            { "label": "Open", "href": "https://msilabs.github.io/msilabs-poster-maker/" },
-            { "label": "GitHub", "href": "https://github.com/msilabs/msilabs-poster-maker" }
+            {
+                "label": "Open",
+                "href": "https://msilabs.github.io/qr-code-generator/"
+            },
+            {
+                "label": "GitHub",
+                "href": "https://github.com/msilabs/qr-code-generator"
+            }
         ]
     }
 ]

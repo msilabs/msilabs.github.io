@@ -26,6 +26,7 @@
     .tool.cv{--acc:var(--mint)}
     .tool.health{--acc:var(--indigo)}
     .tool.poster{--acc:var(--sun)}
+    .tool.qr{--acc:var(--teal)}
     .tag{display:inline-flex;align-items:center;gap:8px;font:500 12px/1 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--slate)}
     .tag i{width:9px;height:9px;border-radius:50%;background:var(--acc);display:block}
     .alo{margin-left:auto;font:600 12px/1 var(--sans);padding:6px 10px;border-radius:999px;background:rgba(255,176,32,.14);color:#9A6200;border:1px solid rgba(255,176,32,.4)}
