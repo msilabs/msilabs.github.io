@@ -15,7 +15,7 @@
 - সাইটের পরিচয় বড় হবে: bKash প্যাকেজ, frameworks, tools আর lessons। পেইজের কাঠামো মোটামুটি একই থাকবে।
 - VS Code এক্সটেনশনের জন্য আলাদা section হবে না। এটা Framework section-এর ভেতরে একটা চওড়া কার্ড (strip) হিসেবে থাকবে।
 - Tools section-এ থাকবে CVবানাও, Code Poster, প্রজেক্ট হেলথ আর QR Code Generator (২০২৬-১১-১৭-এ যোগ, নতুন করে বানানোর পরে)। চারটা কার্ড, তাই গ্রিড ২ কলামের।
-- Simulator-গুলো (Git, SQL Playground, Regex Lab, Scaling, কোড টাইপিং) থাকবে হোমপেইজের Learn section-এ।
+- Simulator-গুলো (Git, Linux, SQL Playground, Regex Lab, Scaling, কোড টাইপিং) থাকবে হোমপেইজের Learn section-এ।
 - **২০২৬-১১-১৪-এ বদলেছে:** পাঠগুলো এই সাইটে নয়, আলাদা repo `msilabs/learn`-এ (local: `../learn/`)। GitHub project Pages হিসেবে ওটা চলে `msilabs.github.io/learn/` ঠিকানায়, তাই এই সাইটের nav-এর `/learn/` লিংক ওখানেই যায়। এই সাইটে `pages/learn/` ফোল্ডার রাখা যাবে না।
 - পাঠ, player আর scene-এর সব নিয়ম আছে `../learn/README.md`-এ। msisaif.github.io-তে থাকবে শুধু লিংক।
 - Nav: **Frameworks · Tools · Learn · About**। Story nav থেকে বাদ, section হিসেবে থাকবে।
@@ -42,6 +42,7 @@ Tools আর simulator (সবগুলো চালু আছে, যাচা�
 | কোড টাইপিং        | https://msilabs.github.io/code-typing/              | ১৪টা ভাষার আসল কোড টাইপ করার খেলা                                                        |
 | SQL Playground    | https://msilabs.github.io/sql-playground/           | ব্রাউজারে আসল SQLite, ধাপে ধাপে query আর JOIN-এর ছবি, বাংলা ব্যাখ্যা, ১১টা মিশন          |
 | Regex Lab         | https://msilabs.github.io/regex-lab/                | বাংলাদেশি pattern, বাংলা ব্যাখ্যা, ১৬টা পাঠ আর ১৫টা challenge। **Alo দিয়ে বানানো**       |
+| Linux Simulator   | https://msilabs.github.io/linux-simulator/          | ব্রাউজারে নকল Linux terminal, বাংলা ব্যাখ্যা, ১১টা mission। **Alo দিয়ে বানানো**         |
 | QR Code Generator | https://msilabs.github.io/qr-code-generator/        | লিংক, Wi-Fi, email, ফোন আর SMS-এর QR, লোগোসহ, PNG আর SVG। **Alo দিয়ে বানানো**          |
 
 প্রতিটার GitHub লিংক: `https://github.com/msilabs/<ফোল্ডারের নাম>`।

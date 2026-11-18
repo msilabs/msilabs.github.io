@@ -10,6 +10,16 @@
         "github": "https://github.com/msilabs/git-simulator"
     },
     {
+        "name": "Linux Simulator",
+        "description": "ব্রাউজারে নকল Linux terminal। pipe, chmod, grep নিজের হাতে চালান, প্রতিটা command-এর বাংলা ব্যাখ্যা পান।",
+        "topic": "Linux",
+        "color": "violet",
+        "icon": "🐧",
+        "meta": "১১টা mission",
+        "href": "https://msilabs.github.io/linux-simulator/",
+        "github": "https://github.com/msilabs/linux-simulator"
+    },
+    {
         "name": "SQL Playground",
         "description": "ব্রাউজারে আসল SQLite। প্রতিটা query-র বাংলা ব্যাখ্যা, ধাপে ধাপে table আর JOIN-এর ছবি।",
         "topic": "SQL",
