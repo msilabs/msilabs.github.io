@@ -40,9 +40,9 @@ Tools আর simulator (সবগুলো চালু আছে, যাচা�
 | Git Simulator     | https://msilabs.github.io/git-simulator/            | ব্রাউজারে fake terminal, commit graph আর বাংলা ব্যাখ্যা, ১১টা mission                    |
 | Scaling Simulator | https://msilabs.github.io/scaling-simulator/        | Load balancer, cache, replica আর autoscaling, ৬টা চ্যালেঞ্জ                              |
 | কোড টাইপিং        | https://msilabs.github.io/code-typing/              | ১৪টা ভাষার আসল কোড টাইপ করার খেলা                                                        |
-| SQL Playground    | https://msilabs.github.io/sql-playground/           | ব্রাউজারে আসল SQLite, ধাপে ধাপে query আর JOIN-এর ছবি, বাংলা ব্যাখ্যা, ১১টা মিশন          |
+| SQL Playground    | https://msilabs.github.io/sql-playground/           | ব্রাউজারে আসল SQLite, ধাপে ধাপে query আর JOIN-এর ছবি, বাংলা ব্যাখ্যা, ৩৫টা পাঠ আর ২৮টা challenge        |
 | Regex Lab         | https://msilabs.github.io/regex-lab/                | বাংলাদেশি pattern, বাংলা ব্যাখ্যা, ১৬টা পাঠ আর ১৫টা challenge। **Alo দিয়ে বানানো**       |
-| Linux Simulator   | https://msilabs.github.io/linux-simulator/          | ব্রাউজারে নকল Linux terminal, বাংলা ব্যাখ্যা, ১১টা mission। **Alo দিয়ে বানানো**         |
+| Linux Simulator   | https://msilabs.github.io/linux-simulator/          | ব্রাউজারে নকল Linux terminal, বাংলা ব্যাখ্যা, ১৬টা পাঠ আর ১৫টা challenge। **Alo দিয়ে বানানো**         |
 | QR Code Generator | https://msilabs.github.io/qr-code-generator/        | লিংক, Wi-Fi, email, ফোন আর SMS-এর QR, লোগোসহ, PNG আর SVG। **Alo দিয়ে বানানো**          |
 
 প্রতিটার GitHub লিংক: `https://github.com/msilabs/<ফোল্ডারের নাম>`।

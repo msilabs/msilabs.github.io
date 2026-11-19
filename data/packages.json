@@ -11,7 +11,7 @@
             "Built-in sandbox validation routes"
         ],
         "chips": [
-            { "text": "3.5K+ downloads", "highlight": true },
+            { "text": "2.9K+ downloads", "highlight": true },
             { "text": "PHP 8.2–8.5" },
             { "text": "Laravel 9–13" },
             { "text": "Facade API" }

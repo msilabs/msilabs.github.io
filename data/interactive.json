@@ -15,7 +15,7 @@
         "topic": "Linux",
         "color": "violet",
         "icon": "🐧",
-        "meta": "১১টা mission",
+        "meta": "১৬টা পাঠ, ১৫টা challenge",
         "href": "https://msilabs.github.io/linux-simulator/",
         "github": "https://github.com/msilabs/linux-simulator"
     },
@@ -25,7 +25,7 @@
         "topic": "SQL",
         "color": "sky",
         "icon": "🗄️",
-        "meta": "১১টা মিশন",
+        "meta": "৩৫টা পাঠ, ২৮টা challenge",
         "href": "https://msilabs.github.io/sql-playground/",
         "github": "https://github.com/msilabs/sql-playground"
     },
@@ -35,7 +35,7 @@
         "topic": "Regex",
         "color": "coral",
         "icon": "🔍",
-        "meta": "১৬টা পাঠ",
+        "meta": "১৬টা পাঠ, ১৫টা challenge",
         "href": "https://msilabs.github.io/regex-lab/",
         "github": "https://github.com/msilabs/regex-lab"
     },
